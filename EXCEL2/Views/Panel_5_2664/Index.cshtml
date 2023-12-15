@@ -1,0 +1,159 @@
+﻿@model IEnumerable<EXCEL2.Models.Panel_5_2664>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.C_ElementID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Creado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCreador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modificado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdModificador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoModificador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_ExecutedScript)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_Register_creation_ProcessID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_Origin_Register_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_RegisterStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_Register_Origin_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_Register_Origin_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_Numerator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_NUM_DOCUMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_RAZON_SOCIAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_FECHA_EMISION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_CANTIDAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_DIRECCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_CUENTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C3_TIPO_COMPROBANTE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_ElementID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Creado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCreador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCreador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modificado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdModificador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoModificador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_ExecutedScript)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_Register_creation_ProcessID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_Origin_Register_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_RegisterStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_Register_Origin_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_Register_Origin_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_Numerator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_NUM_DOCUMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_RAZON_SOCIAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_FECHA_EMISION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_CANTIDAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_DIRECCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_CUENTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C3_TIPO_COMPROBANTE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
