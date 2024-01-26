@@ -21,10 +21,15 @@ namespace EXCEL2.Controllers
     public class TerrapuertoController : Controller
     {
         private AuraPortal_BPMSEntities db = new AuraPortal_BPMSEntities();
+
+
+        //trasferencia
         [HttpGet]
         public ActionResult GenerarArchivo(int idPanel)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            //return Json(idPanel);
+
+			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             // Crear un nuevo paquete Excel
             byte[] bytesDelExcel = ObtenerDatosVarbinary(); // Reemplaza esto con tus propios datos
 
@@ -106,26 +111,24 @@ namespace EXCEL2.Controllers
             var filtro = db.Panel_1008.Where(x => x.C3_PR3_ID_PANEL == idPanel).First();
 
 
-            var format = "MM-dd-yyyy HH:mm:ss";
+            var format = "yyyy-MM-dd HH:mm:ss";
             var fecha1 = DateTime.ParseExact(filtro.C3_A__PR3_FS_FECHA_INICIO.Value.ToString(format), format, new CultureInfo("en-US"));
             var fecha2 = DateTime.ParseExact(filtro.C3_A__PR3_FS_FECHA_FIN.Value.ToString(format), format, new CultureInfo("en-US"));
 
+            //return package;
 
-            var FechaInicio = fecha1.ToString("dd MMMM", new CultureInfo("es-ES"));
+
+
+			var FechaInicio = fecha1.ToString("dd MMMM", new CultureInfo("es-ES"));
             var FechaFin = fecha2.ToString("dd MMMM yyyy", new CultureInfo("es-ES"));
 
 
             int filaActual = 8;
             int columnaIndex = 1;
-            string valorCelda = "00";
 
             
                 while (hoja1.Cells[filaActual, columnaIndex].Value != null)
                 {
-                    // Obtener el valor de la celda actual
-                    valorCelda = (string)hoja1.Cells[filaActual, columnaIndex].Value;
-
-
                     // Mover a la siguiente fila
                     filaActual++;
                 }

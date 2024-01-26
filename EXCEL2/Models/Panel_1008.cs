@@ -110,5 +110,54 @@ namespace EXCEL2.Models
         public Nullable<decimal> C3_PR3_REGULARIZAR_MONTO { get; set; }
         public Nullable<int> C3_PR3_REGULARIZAR_MES { get; set; }
         public Nullable<int> C3_PR3_REGULARIZAR_AÑO { get; set; }
+        public Nullable<int> C3_PR3_NUEVO_EXCEL { get; set; }
+        public Nullable<int> C3_PR3_EN_AÑO_ANTERIOR { get; set; }
+        public Nullable<int> C3_PR3_EN_AÑO_POSTERIOR { get; set; }
+        public string C3_PR3_FAM_TEXTO_AÑO { get; set; }
+        public Nullable<int> C8_A__PR3_TRANSITO_TERRAPUERTO_3_TL_PLACA_TERR_Total_Cantidad { get; set; }
+        public Nullable<decimal> C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_DET { get; set; }
+        public Nullable<int> C2_PR3_CORREO_COPIA_Id_ { get; set; }
+        public string C2_PR3_CORREO_COPIA_PR3_TEXTO { get; set; }
+        public Nullable<decimal> C3_PR3_DESC_SIN_RETENCION { get; set; }
+        public Nullable<decimal> C3_PR3_DET_COB_MES_ANT { get; set; }
+        public Nullable<decimal> C3_PR3_DET_COB_MONTO { get; set; }
+        public Nullable<decimal> C3_PR3_DET_COB_TOTAL { get; set; }
+        public Nullable<decimal> C3_PR3_TRAN_COB_MES_ANT { get; set; }
+        public Nullable<decimal> C3_PR3_TRAN_COB_MONTO { get; set; }
+        public Nullable<decimal> C3_PR3_VISA_COB_MES_ANT { get; set; }
+        public Nullable<decimal> C3_PR3_TRAN_COB_TOTAL { get; set; }
+        public Nullable<decimal> C3_PR3_VISA_COB_MONTO { get; set; }
+        public Nullable<decimal> C3_PR3_VISA_COB_TOTAL { get; set; }
+        public Nullable<decimal> C8_PR3_COB_DESCUENTO_VISA_3_Monto_VISA_Suma { get; set; }
+        public Nullable<decimal> C8_PR3_COB_DESCUENTO_TRAN_3_Monto_Suma { get; set; }
+        public Nullable<decimal> C8_PR3_COB_DESCUENTO_DET_3_Monto_DET_Suma { get; set; }
+        public Nullable<int> C3_PR3_F_ESTADO_FAM { get; set; }
+        public string C3_PR3_OBSERVACION5 { get; set; }
+        public Nullable<decimal> C3_PR3_RET_RETENCIONES { get; set; }
+        public Nullable<decimal> C8_PR3_DETRACCIONES_3_TL_MONTO_DETRACION_Monto_total { get; set; }
+        public Nullable<decimal> C8_PR3_RETENCION_MENSUAL_CONCESIO_3_TL_IMPORTE_Suma_total { get; set; }
+        public Nullable<int> C3_PR3_TIPO_DESCUENTO { get; set; }
+        public Nullable<decimal> C3_PR3_DIF_DETRACCION_BUSES { get; set; }
+        public Nullable<decimal> C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_VISA { get; set; }
+        public Nullable<decimal> C8_PR3_DETRACCIONES_PENDIENTES_3_Detracción_Suma { get; set; }
+        public Nullable<int> C8_PR3_DETRACCIONES_PENDIENTES_3_Tránsito_Cantidad { get; set; }
+        public Nullable<int> C3_PR3_INDICADOR1 { get; set; }
+        public Nullable<int> C3_PR3_INDICADOR5 { get; set; }
+        public Nullable<int> C3_PR3_INDICADOR4 { get; set; }
+        public Nullable<int> C3_PR3_INDICADOR3 { get; set; }
+        public Nullable<int> C3_PR3_INDICADOR2 { get; set; }
+        public Nullable<decimal> C8_PR3_AUTODETRACCIONES_3_PR3_MONTO_DEPOSITO_AUTO_Suma { get; set; }
+        public Nullable<decimal> C8_GC_COMPROBANTES_TRANSITOS_0_AFECTA_DETRACCION_3_TL_MONTO_DETRACCION_CARGA_Y_Suma { get; set; }
+        public Nullable<int> C8_PR3_AUTODETRACCIONES_3_TL_CORRELATIVO_AUTO_Cantidad { get; set; }
+        public Nullable<System.DateTime> C3_PR3_FECH_TRANSFERENCIA_VISA { get; set; }
+        public Nullable<decimal> C3_PR3_REGULARIZAR_AÑO_VISA { get; set; }
+        public Nullable<decimal> C3_PR3_REGULARIZAR_MES_VISA { get; set; }
+        public Nullable<decimal> C3_PR3_REGULARIZAR_MONTO_VISA { get; set; }
+        public Nullable<decimal> C3_PR3_DIF3 { get; set; }
+        public Nullable<decimal> C3_PR3_DIF2 { get; set; }
+        public Nullable<decimal> C3_PR3_DIF1 { get; set; }
+        public Nullable<decimal> C3_PR3_DIF6 { get; set; }
+        public Nullable<decimal> C3_PR3_DIF5 { get; set; }
+        public Nullable<decimal> C3_PR3_DIF4 { get; set; }
     }
 }

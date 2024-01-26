@@ -16,10 +16,12 @@ namespace EXCEL2.Controllers
 {
     public class LiquidacionController : Controller
     {
-
+        //Covisur
         private AuraPortal_BPMSEntities db = new AuraPortal_BPMSEntities();
 
-        [HttpGet]
+
+		//trasferencia
+		[HttpGet]
         public ActionResult GenerarArchivo(int idPanel)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -80,7 +82,7 @@ namespace EXCEL2.Controllers
             var filtro = db.Panel_1008.Where(x => x.C3_PR3_ID_PANEL == idPanel).First();
 
 
-            var format = "MM-dd-yyyy HH:mm:ss";
+            var format = "yyyy-MM-dd HH:mm:ss";
             var fecha1 = DateTime.ParseExact(filtro.C3_A__PR3_FS_FECHA_INICIO.Value.ToString(format), format, new CultureInfo("en-US"));
             var fecha2 = DateTime.ParseExact(filtro.C3_A__PR3_FS_FECHA_FIN.Value.ToString(format), format, new CultureInfo("en-US"));
 
@@ -91,20 +93,19 @@ namespace EXCEL2.Controllers
 
             int filaActual = 6;
             int columnaIndex = 1;
-            string valorCelda = "00";
 
             while (hoja1.Cells[filaActual, columnaIndex].Value != null)
             {
-                // Obtener el valor de la celda actual
-                valorCelda = (string)hoja1.Cells[filaActual, columnaIndex].Value;
 
 
                 // Mover a la siguiente fila
                 filaActual++;
             }
 
+            
 
-            int numeroEntero = (int)(filtro.C3_PR3_ITEM_TRANSFERENCIA);
+
+			int numeroEntero = (int)(filtro.C3_PR3_ITEM_TRANSFERENCIA);
             int nuevaFila = filaActual;
 
 
@@ -131,25 +132,25 @@ namespace EXCEL2.Controllers
                 Suma = g.Sum(d => d.C3_ND_PEAJE_TOTAL_RT)
             }).ToArray();
 
-            
 
-            
+			
 
-            var gruposPorAnio = lista.GroupBy(d => new {  Anio = d.C3_FE_FECHA_COMPROBANTE_RT.Value.Year })
+
+			var gruposPorAnio = lista.GroupBy(d => new {  Anio = d.C3_FE_FECHA_COMPROBANTE_RT.Value.Year })
                 .Select(g => new
                 {
                     Anio = g.Key.Anio,
                 })
                 .ToList();
-
-            var ultimoMes = gruposPorMes.Last().Mes;
-            var ultimoAnio  = gruposPorMes.Last().Anio;
+             
+            //var ultimoMes = gruposPorMes.Last().Mes;
+            //var ultimoAnio  = gruposPorMes.Last().Anio;
 
             //int anioAnterior = 0;
             hoja1.InsertRow(nuevaFila, 1);
             hoja1.Cells["B" + nuevaFila].Value = "Del " + FechaInicio + " al " + FechaFin;
-            hoja1.Cells["D" + nuevaFila].Value = filtro.C8_A__PR3_ABONO_TRANSITO_3_T_FECHA_Fecha_tranfs_min.Value.ToString("dd/MM/yyyy");
-            hoja1.Cells["A" + nuevaFila].Value = numeroEntero.ToString("00");
+            hoja1.Cells["D" + nuevaFila].Value = filtro.C8_A__PR3_ABONO_TRANSITO_3_T_FECHA_Fecha_tranfs_min.Value.ToString("dd/MM/yyyy");//Fecha de trasferencia
+            hoja1.Cells["A" + nuevaFila].Value = numeroEntero.ToString("00");//item
             hoja1.Cells["A" + nuevaFila.ToString()].Style.Font.Bold = true; // Poner en negrita
             hoja1.Cells["A" + nuevaFila].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Centrar el contenido
 
@@ -167,28 +168,32 @@ namespace EXCEL2.Controllers
                 }
             }
 
-            hoja1.Cells["E" + nuevaFila].Value = filtro.C3_A__PR3_TOTAL_TRANSFERIDO;//Total Transferido            
-            hoja1.Cells["E" + nuevaFila].Style.Numberformat.Format = "\"S/\"#,##0.00";
-            if(filtro.C8_A__PR3_OTROS_DESCUENTOS_3_T_MONTO_Total_monto != null)
+            if(filtro.C8_A__PR3_ABONO_TRANSITO_3_T_MONTO_BONO_T_Sumatoria == null)
             {
-                hoja1.Cells["F" + nuevaFila].Value = -filtro.C8_A__PR3_OTROS_DESCUENTOS_3_T_MONTO_Total_monto;//Descuento
+                hoja1.Cells["E" + nuevaFila].Value = 0;
+
+            }
+            else
+            {
+				hoja1.Cells["E" + nuevaFila].Value = filtro.C8_A__PR3_ABONO_TRANSITO_3_T_MONTO_BONO_T_Sumatoria;//Total Transferido            
+			}
+
+			
+            hoja1.Cells["E" + nuevaFila].Style.Numberformat.Format = "\"S/\"#,##0.00";
+            if(filtro.C3_PR3_REGULARIZAR_OTROS_DESCUENTOS != null)
+            {
+                hoja1.Cells["F" + nuevaFila].Value = filtro.C3_PR3_REGULARIZAR_OTROS_DESCUENTOS;//Descuento
                 hoja1.Cells["F" + nuevaFila].Style.Numberformat.Format = "\"S/\"#,##0.00";
             }
-            
 
-            //Hoja 2-------------------------
+			//Hoja 2-------------------------
 
-            ExcelWorksheet hoja2 = package.Workbook.Worksheets[nombresDeHojas[1]];
+			ExcelWorksheet hoja2 = package.Workbook.Worksheets[nombresDeHojas[1]];
 
             int filaActualHoja2 = 6;
             int columnaIndexHoja2 = 1;
-            string valorCeldaHoja2 = "";
             while (hoja2.Cells[filaActualHoja2, columnaIndexHoja2].Value != null)
             {
-                // Obtener el valor de la celda actual
-                valorCeldaHoja2 = (string)hoja2.Cells[filaActualHoja2, columnaIndexHoja2].Value;
-
-
                 // Mover a la siguiente fila
                 filaActualHoja2++;
             }
@@ -211,7 +216,7 @@ namespace EXCEL2.Controllers
 
             hoja2.InsertRow(nuevaFilaHoja2, 1);
             hoja2.Cells["B" + nuevaFilaHoja2].Value = "Del " + FechaInicio + " al " + FechaFin;
-            hoja2.Cells["D" + nuevaFilaHoja2].Value = filtro.C8_A__PR3_ABONO_DETRACCION_3_PR3_FECHA_DET_Fecha_tranfs_min.Value.ToString("dd/MM/yyyy");
+            hoja2.Cells["D" + nuevaFilaHoja2].Value = filtro.C8_A__PR3_ABONO_DETRACCION_3_PR3_FECHA_DET_Fecha_tranfs_min.Value.ToString("dd/MM/yyyy");//Fecha de trasferencia
             hoja2.Cells["A" + nuevaFilaHoja2].Value = numeroEnterohoja2.ToString("00");
             hoja2.Cells["A" + nuevaFilaHoja2.ToString()].Style.Font.Bold = true; // Poner en negrita
             hoja2.Cells["A" + nuevaFilaHoja2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Centrar el contenido
@@ -230,11 +235,21 @@ namespace EXCEL2.Controllers
                     }
                 }
             }
-            hoja2.Cells["E" + nuevaFilaHoja2].Value = filtro.C3_A__PR3_MONTO_DETRACCIONES;//Total Transferido            
-            hoja2.Cells["E" + nuevaFilaHoja2].Style.Numberformat.Format = "\"S/\"#,##0.00";
-            if (filtro.C8_PR3_GC_OTROS_DESCUENTOS_DETRAC_3_T_MONTO_DET_Total_monto != null)
+
+            if(filtro.C8_A__PR3_ABONO_DETRACCION_3_PR3_MONTO_Sumatoria == null)
             {
-                hoja2.Cells["F" + nuevaFilaHoja2].Value = -filtro.C8_PR3_GC_OTROS_DESCUENTOS_DETRAC_3_T_MONTO_DET_Total_monto;//Descuento
+                hoja2.Cells["E" + nuevaFilaHoja2].Value = 0;
+
+			}
+            else
+            {
+				hoja2.Cells["E" + nuevaFilaHoja2].Value = filtro.C8_A__PR3_ABONO_DETRACCION_3_PR3_MONTO_Sumatoria;//Total Transferido    
+			}
+                   
+            hoja2.Cells["E" + nuevaFilaHoja2].Style.Numberformat.Format = "\"S/\"#,##0.00";
+            if (filtro.C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_DET != null)
+            {
+                hoja2.Cells["F" + nuevaFilaHoja2].Value = filtro.C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_DET;//Descuento
                 hoja2.Cells["F" + nuevaFilaHoja2].Style.Numberformat.Format = "\"S/\"#,##0.00";
             }
             
@@ -361,7 +376,6 @@ namespace EXCEL2.Controllers
         }
 
 
-        
-
+       
     }
 }

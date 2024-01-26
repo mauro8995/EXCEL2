@@ -135,6 +135,27 @@
           <Property Name="_FamilyRecord-To" Type="datetime" />
           <Property Name="_SecureRoomID" Type="int" />
         </EntityType>
+        <EntityType Name="AP_Dyn_Familias_30">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ElementID" Type="int" />
+          <Property Name="Creado" Type="datetime" />
+          <Property Name="IdCreador" Type="int" />
+          <Property Name="TipoCreador" Type="int" />
+          <Property Name="Modificado" Type="datetime" />
+          <Property Name="IdModificador" Type="int" />
+          <Property Name="TipoModificador" Type="int" />
+          <Property Name="_FamilyClass" Type="int" />
+          <Property Name="_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="_FamilyRecord-Priority" Type="int" />
+          <Property Name="_FamilyRecord-Status" Type="int" />
+          <Property Name="_FamilyRecord-Description" Type="nvarchar(max)" />
+          <Property Name="_FamilyRecord-From" Type="datetime" />
+          <Property Name="_FamilyRecord-To" Type="datetime" />
+          <Property Name="_SecureRoomID" Type="int" />
+        </EntityType>
         <EntityType Name="Panel_1008">
           <Key>
             <PropertyRef Name="ID" />
@@ -235,6 +256,55 @@
           <Property Name="3_PR3_REGULARIZAR_MONTO" Type="numeric" Precision="28" Scale="10" />
           <Property Name="3_PR3_REGULARIZAR_MES" Type="int" />
           <Property Name="3_PR3_REGULARIZAR_AÑO" Type="int" />
+          <Property Name="3_PR3_NUEVO_EXCEL" Type="int" />
+          <Property Name="3_PR3_EN_AÑO_ANTERIOR" Type="int" />
+          <Property Name="3_PR3_EN_AÑO_POSTERIOR" Type="int" />
+          <Property Name="3_PR3_FAM_TEXTO_AÑO" Type="nvarchar" MaxLength="255" />
+          <Property Name="8_A!_PR3_TRANSITO_TERRAPUERTO/3_TL_PLACA_TERR/Total_Cantidad" Type="int" />
+          <Property Name="3_PR3_REGULARIZAR_OTROS_DESCUENTOS_DET" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="2_PR3_CORREO_COPIA/Id." Type="int" />
+          <Property Name="2_PR3_CORREO_COPIA/PR3_TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_DESC_SIN_RETENCION" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DET_COB_MES_ANT" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DET_COB_MONTO" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DET_COB_TOTAL" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_TRAN_COB_MES_ANT" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_TRAN_COB_MONTO" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_VISA_COB_MES_ANT" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_TRAN_COB_TOTAL" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_VISA_COB_MONTO" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_VISA_COB_TOTAL" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_COB_DESCUENTO_VISA/3_Monto_VISA/Suma" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_COB_DESCUENTO_TRAN/3_Monto/Suma" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_COB_DESCUENTO_DET/3_Monto_DET/Suma" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_F_ESTADO_FAM" Type="int" />
+          <Property Name="3_PR3_OBSERVACION5" Type="nvarchar(max)" />
+          <Property Name="3_PR3_RET_RETENCIONES" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_DETRACCIONES/3_TL_MONTO_DETRACION/Monto_total" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_RETENCION_MENSUAL_CONCESIO/3_TL_IMPORTE/Suma_total" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_TIPO_DESCUENTO" Type="int" />
+          <Property Name="3_PR3_DIF_DETRACCION_BUSES" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_REGULARIZAR_OTROS_DESCUENTOS_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_DETRACCIONES_PENDIENTES/3_Detracción/Suma" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_DETRACCIONES_PENDIENTES/3_Tránsito/Cantidad" Type="int" />
+          <Property Name="3_PR3_INDICADOR1" Type="int" />
+          <Property Name="3_PR3_INDICADOR5" Type="int" />
+          <Property Name="3_PR3_INDICADOR4" Type="int" />
+          <Property Name="3_PR3_INDICADOR3" Type="int" />
+          <Property Name="3_PR3_INDICADOR2" Type="int" />
+          <Property Name="8_PR3_AUTODETRACCIONES/3_PR3_MONTO_DEPOSITO_AUTO/Suma" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_GC_COMPROBANTES_TRANSITOS/0_AFECTA_DETRACCION/3_TL_MONTO_DETRACCION_CARGA_Y/Suma" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="8_PR3_AUTODETRACCIONES/3_TL_CORRELATIVO_AUTO/Cantidad" Type="int" />
+          <Property Name="3_PR3_FECH_TRANSFERENCIA_VISA" Type="datetime" />
+          <Property Name="3_PR3_REGULARIZAR_AÑO_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_REGULARIZAR_MES_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_REGULARIZAR_MONTO_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF3" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF2" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF1" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF6" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF5" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF4" Type="numeric" Precision="28" Scale="10" />
         </EntityType>
         <EntityType Name="Panel_1008_4700">
           <Key>
@@ -273,6 +343,28 @@
           <Property Name="3_TL_PR3_OBSERVACION_Y" Type="int" />
           <Property Name="3_TL_DETALLE2_Y" Type="nvarchar(max)" />
           <Property Name="3_TL_FECHA_PAGO_DETRACCION_CAR_Y" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Panel_1008_7074">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ElementID" Type="int" />
+          <Property Name="Creado" Type="datetime" />
+          <Property Name="IdCreador" Type="int" />
+          <Property Name="TipoCreador" Type="int" />
+          <Property Name="Modificado" Type="datetime" />
+          <Property Name="IdModificador" Type="int" />
+          <Property Name="TipoModificador" Type="int" />
+          <Property Name="_ExecutedScript" Type="int" />
+          <Property Name="_Register creation ProcessID" Type="int" />
+          <Property Name="_Origin Register ID" Type="int" />
+          <Property Name="_RegisterStatus" Type="int" />
+          <Property Name="_Register Origin ID" Type="int" />
+          <Property Name="_Register Origin Type" Type="int" />
+          <Property Name="_Numerator" Type="int" />
+          <Property Name="3_ND_IMPORTE_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_FE_FECHA_VISA" Type="datetime" />
         </EntityType>
         <EntityType Name="Panel_1009">
           <Key>
@@ -377,6 +469,124 @@
           <Property Name="3_PR3_MES_TRANSFERENCIA" Type="int" />
           <Property Name="3_PR3_CANT_RECORDATORIO" Type="int" />
           <Property Name="3_PR3_COM_POR_TRANSFERIR_SN" Type="int" />
+          <Property Name="3_PR3_EN_AÑO_ANTERIOR" Type="int" />
+          <Property Name="3_PR3_NUEVO_EXCEL" Type="int" />
+          <Property Name="3_PR3_EN_AÑO_ANTERIOR_TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_CORREO_DAYA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FECHA_MENOR" Type="datetime" />
+          <Property Name="3_PR3_INDICADOR1" Type="int" />
+          <Property Name="3_PR3_COM_CONTADOR_COVIPERU" Type="int" />
+          <Property Name="3_PR3_COM_PA_RECAUDACION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_VALOR_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF_MES_AJUSTE_VISA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FE_FECHA_COM_FINAL_VISA" Type="datetime" />
+          <Property Name="3_PR3_COM_FA_RECAUDACION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_DIF_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_DIF_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_DIF_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_DIF_TRANSITO_SIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FA_TRANSITO_SIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_FIN_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_FIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_FIN_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_DIF_AÑO_AJUSTE_VISA" Type="int" />
+          <Property Name="3_PR3_COM_FP_DIF_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_DIF_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PA_TRANSITO_SIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FINAL_DIFERENCIA_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_DIF_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_DIF_TRANSITO_SIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_TRANSITO_SIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FP_RECAUDACION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_FIN_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_FIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_FIN_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM-PP_AÑO_AJUSTE_VISA" Type="int" />
+          <Property Name="3_PR3_COM_PP_MES_AJUSTE_VISA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_COM_PP_AJUSTE_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_AJUSTE_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_TOTAL_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_MONTO_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_TRANSITO_SIN_IGV_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_VALOR_COMISION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_PP_RECAUDACION_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_FINAL_DIFERENCIA_AJUSTE_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_FE_FECHA_COM_FINAL_AJUSTE_VISA" Type="datetime" />
+          <Property Name="3_PR3_COM_RES_DIFERENCIA_VISA" Type="nvarchar(max)" />
+          <Property Name="3_PR3_ASUNTO2" Type="nvarchar" MaxLength="255" />
+          <Property Name="2_PR3_CORREO_COPIA/PR3_TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="2_PR3_CORREO_COPIA/Id." Type="int" />
+          <Property Name="3_PR3_INDICADOR2" Type="int" />
+          <Property Name="3_PR3_INDICADOR3" Type="int" />
+          <Property Name="3_PR3_INDICADOR4" Type="int" />
+          <Property Name="3_PR3_COM_POR_TRANSFERIR_VISA" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_COM_POR_TRANSFERIR_SN_VISA" Type="int" />
+          <Property Name="8_PR3_TRANSITOS_VISA_COVIPERU/3_ND_IMPORTE_VISA/Suma" Type="numeric" Precision="28" Scale="10" />
+        </EntityType>
+        <EntityType Name="Panel_1009_4916">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ElementID" Type="int" />
+          <Property Name="Creado" Type="datetime" />
+          <Property Name="IdCreador" Type="int" />
+          <Property Name="TipoCreador" Type="int" />
+          <Property Name="Modificado" Type="datetime" />
+          <Property Name="IdModificador" Type="int" />
+          <Property Name="TipoModificador" Type="int" />
+          <Property Name="_ExecutedScript" Type="int" />
+          <Property Name="_Register creation ProcessID" Type="int" />
+          <Property Name="_Origin Register ID" Type="int" />
+          <Property Name="_RegisterStatus" Type="int" />
+          <Property Name="_Register Origin ID" Type="int" />
+          <Property Name="_Register Origin Type" Type="int" />
+          <Property Name="_Numerator" Type="int" />
+          <Property Name="3_TL_RUC_CLIENTE_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_NOMBRE_CLIENTE_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_TIPO_DOCUMENTO_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_NRO_COMPROBANTE_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_MONEDA_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_ND_IMPORTE_TOTAL_CP" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_TL_IMPORTE_TOTAL_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_FE_FECHA_EMISION_CP" Type="datetime" />
+          <Property Name="3_TL_ESTADO_DOC_TRIBUTARIO_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_DOCUMENTO_REFERENCIA_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_CONCESIONARIA_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_CUENTA_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_DETRACCION_TOTAL_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_ND_DETRACCION_TOTAL_CP" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_TL_CONCAT_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_SS_OBSERVACION_CP" Type="int" />
+          <Property Name="3_TM_DETALLE" Type="nvarchar(max)" />
+          <Property Name="3_TL_ORDEN_COMPRA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_OP_GRAVADA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_OP_NO_GRAVADA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_IGV_CP" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_OTROS_IMPUESTOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_OTROS_CARGOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_F_FECHA_VENCIMIENTO" Type="datetime" />
+          <Property Name="3_TL_ESTADO_DOC" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_OBSERVACION_SUNAT" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_HABILITADO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_TIPO_EMISION" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_OBSERVACIONES" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_FE_FECHA_EMISION_CP_TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_F_FECHA_VENCIMIENTO_TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_F_ENVIADO_DECLARAR_TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_F_ENVIADO_DECLARAR" Type="datetime" />
+          <Property Name="3_TL_SERIE" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_TL_CORRELATIVO" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Panel_5">
           <Key>
@@ -455,9 +665,12 @@
           <EntitySet Name="AP__DocIntegratedStorage" EntityType="Self.AP__DocIntegratedStorage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AP_Dyn_Familias_26" EntityType="Self.AP_Dyn_Familias_26" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AP_Dyn_Familias_27" EntityType="Self.AP_Dyn_Familias_27" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AP_Dyn_Familias_30" EntityType="Self.AP_Dyn_Familias_30" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1008" EntityType="Self.Panel_1008" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1008_4700" EntityType="Self.Panel_1008_4700" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Panel_1008_7074" EntityType="Self.Panel_1008_7074" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1009" EntityType="Self.Panel_1009" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Panel_1009_4916" EntityType="Self.Panel_1009_4916" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_5" EntityType="Self.Panel_5" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_5_2664" EntityType="Self.Panel_5_2664" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -476,6 +689,9 @@
           <EntitySet Name="AP__DocIntegratedStorage" EntityType="AuraPortal_BPMSModel.AP__DocIntegratedStorage" />
           <EntitySet Name="AP_Dyn_Familias_27" EntityType="AuraPortal_BPMSModel.AP_Dyn_Familias_27" />
           <EntitySet Name="Panel_1009" EntityType="AuraPortal_BPMSModel.Panel_1009" />
+          <EntitySet Name="Panel_1009_4916" EntityType="AuraPortal_BPMSModel.Panel_1009_4916" />
+          <EntitySet Name="AP_Dyn_Familias_30" EntityType="AuraPortal_BPMSModel.AP_Dyn_Familias_30" />
+          <EntitySet Name="Panel_1008_7074" EntityType="AuraPortal_BPMSModel.Panel_1008_7074" />
         </EntityContainer>
         <EntityType Name="Panel_5_2664">
           <Key>
@@ -649,6 +865,55 @@
           <Property Name="C3_PR3_REGULARIZAR_MONTO" Type="Decimal" Precision="28" Scale="10" />
           <Property Name="C3_PR3_REGULARIZAR_MES" Type="Int32" />
           <Property Name="C3_PR3_REGULARIZAR_AÑO" Type="Int32" />
+          <Property Name="C3_PR3_NUEVO_EXCEL" Type="Int32" />
+          <Property Name="C3_PR3_EN_AÑO_ANTERIOR" Type="Int32" />
+          <Property Name="C3_PR3_EN_AÑO_POSTERIOR" Type="Int32" />
+          <Property Name="C3_PR3_FAM_TEXTO_AÑO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C8_A__PR3_TRANSITO_TERRAPUERTO_3_TL_PLACA_TERR_Total_Cantidad" Type="Int32" />
+          <Property Name="C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_DET" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C2_PR3_CORREO_COPIA_Id_" Type="Int32" />
+          <Property Name="C2_PR3_CORREO_COPIA_PR3_TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_DESC_SIN_RETENCION" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DET_COB_MES_ANT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DET_COB_MONTO" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DET_COB_TOTAL" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_TRAN_COB_MES_ANT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_TRAN_COB_MONTO" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_VISA_COB_MES_ANT" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_TRAN_COB_TOTAL" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_VISA_COB_MONTO" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_VISA_COB_TOTAL" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_COB_DESCUENTO_VISA_3_Monto_VISA_Suma" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_COB_DESCUENTO_TRAN_3_Monto_Suma" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_COB_DESCUENTO_DET_3_Monto_DET_Suma" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_F_ESTADO_FAM" Type="Int32" />
+          <Property Name="C3_PR3_OBSERVACION5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_RET_RETENCIONES" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_DETRACCIONES_3_TL_MONTO_DETRACION_Monto_total" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_RETENCION_MENSUAL_CONCESIO_3_TL_IMPORTE_Suma_total" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_TIPO_DESCUENTO" Type="Int32" />
+          <Property Name="C3_PR3_DIF_DETRACCION_BUSES" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_DETRACCIONES_PENDIENTES_3_Detracción_Suma" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_DETRACCIONES_PENDIENTES_3_Tránsito_Cantidad" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR1" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR5" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR4" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR3" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR2" Type="Int32" />
+          <Property Name="C8_PR3_AUTODETRACCIONES_3_PR3_MONTO_DEPOSITO_AUTO_Suma" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_GC_COMPROBANTES_TRANSITOS_0_AFECTA_DETRACCION_3_TL_MONTO_DETRACCION_CARGA_Y_Suma" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C8_PR3_AUTODETRACCIONES_3_TL_CORRELATIVO_AUTO_Cantidad" Type="Int32" />
+          <Property Name="C3_PR3_FECH_TRANSFERENCIA_VISA" Type="DateTime" Precision="3" />
+          <Property Name="C3_PR3_REGULARIZAR_AÑO_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_REGULARIZAR_MES_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_REGULARIZAR_MONTO_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF3" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF2" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF1" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF6" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF5" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF4" Type="Decimal" Precision="28" Scale="10" />
         </EntityType>
         <EntityType Name="Panel_1008_4700">
           <Key>
@@ -928,6 +1193,167 @@
           <Property Name="C3_PR3_MES_TRANSFERENCIA" Type="Int32" />
           <Property Name="C3_PR3_CANT_RECORDATORIO" Type="Int32" />
           <Property Name="C3_PR3_COM_POR_TRANSFERIR_SN" Type="Int32" />
+          <Property Name="C3_PR3_EN_AÑO_ANTERIOR" Type="Int32" />
+          <Property Name="C3_PR3_NUEVO_EXCEL" Type="Int32" />
+          <Property Name="C3_PR3_EN_AÑO_ANTERIOR_TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_CORREO_DAYA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FECHA_MENOR" Type="DateTime" Precision="3" />
+          <Property Name="C3_PR3_INDICADOR1" Type="Int32" />
+          <Property Name="C3_PR3_COM_CONTADOR_COVIPERU" Type="Int32" />
+          <Property Name="C3_PR3_COM_PA_RECAUDACION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_VALOR_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF_MES_AJUSTE_VISA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FE_FECHA_COM_FINAL_VISA" Type="DateTime" Precision="3" />
+          <Property Name="C3_PR3_COM_FA_RECAUDACION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_DIF_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_DIF_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_DIF_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_DIF_TRANSITO_SIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FA_TRANSITO_SIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_FIN_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_FIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_FIN_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_DIF_AÑO_AJUSTE_VISA" Type="Int32" />
+          <Property Name="C3_PR3_COM_FP_DIF_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_DIF_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PA_TRANSITO_SIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FINAL_DIFERENCIA_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_DIF_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_DIF_TRANSITO_SIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_TRANSITO_SIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FP_RECAUDACION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_FIN_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_FIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_FIN_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_AÑO_AJUSTE_VISA" Type="Int32" />
+          <Property Name="C3_PR3_COM_PP_MES_AJUSTE_VISA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_COM_PP_AJUSTE_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_AJUSTE_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_TOTAL_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_MONTO_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_TRANSITO_SIN_IGV_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_VALOR_COMISION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_PP_RECAUDACION_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_FINAL_DIFERENCIA_AJUSTE_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_FE_FECHA_COM_FINAL_AJUSTE_VISA" Type="DateTime" Precision="3" />
+          <Property Name="C3_PR3_COM_RES_DIFERENCIA_VISA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_ASUNTO2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C2_PR3_CORREO_COPIA_PR3_TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C2_PR3_CORREO_COPIA_Id_" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR2" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR3" Type="Int32" />
+          <Property Name="C3_PR3_INDICADOR4" Type="Int32" />
+          <Property Name="C3_PR3_COM_POR_TRANSFERIR_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_COM_POR_TRANSFERIR_SN_VISA" Type="Int32" />
+          <Property Name="C8_PR3_TRANSITOS_VISA_COVIPERU_3_ND_IMPORTE_VISA_Suma" Type="Decimal" Precision="28" Scale="10" />
+        </EntityType>
+        <EntityType Name="Panel_1009_4916">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ElementID" Type="Int32" />
+          <Property Name="Creado" Type="DateTime" Precision="3" />
+          <Property Name="IdCreador" Type="Int32" />
+          <Property Name="TipoCreador" Type="Int32" />
+          <Property Name="Modificado" Type="DateTime" Precision="3" />
+          <Property Name="IdModificador" Type="Int32" />
+          <Property Name="TipoModificador" Type="Int32" />
+          <Property Name="C_ExecutedScript" Type="Int32" />
+          <Property Name="C_Register_creation_ProcessID" Type="Int32" />
+          <Property Name="C_Origin_Register_ID" Type="Int32" />
+          <Property Name="C_RegisterStatus" Type="Int32" />
+          <Property Name="C_Register_Origin_ID" Type="Int32" />
+          <Property Name="C_Register_Origin_Type" Type="Int32" />
+          <Property Name="C_Numerator" Type="Int32" />
+          <Property Name="C3_TL_RUC_CLIENTE_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_NOMBRE_CLIENTE_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_TIPO_DOCUMENTO_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_NRO_COMPROBANTE_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_MONEDA_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_ND_IMPORTE_TOTAL_CP" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_TL_IMPORTE_TOTAL_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_FE_FECHA_EMISION_CP" Type="DateTime" Precision="3" />
+          <Property Name="C3_TL_ESTADO_DOC_TRIBUTARIO_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_DOCUMENTO_REFERENCIA_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_CONCESIONARIA_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_CUENTA_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_DETRACCION_TOTAL_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_ND_DETRACCION_TOTAL_CP" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_TL_CONCAT_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_SS_OBSERVACION_CP" Type="Int32" />
+          <Property Name="C3_TM_DETALLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_ORDEN_COMPRA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_OP_GRAVADA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_OP_NO_GRAVADA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_IGV_CP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_OTROS_IMPUESTOS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_OTROS_CARGOS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_F_FECHA_VENCIMIENTO" Type="DateTime" Precision="3" />
+          <Property Name="C3_TL_ESTADO_DOC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_OBSERVACION_SUNAT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_HABILITADO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_TIPO_EMISION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_OBSERVACIONES" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_FE_FECHA_EMISION_CP_TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_F_FECHA_VENCIMIENTO_TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_F_ENVIADO_DECLARAR_TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_F_ENVIADO_DECLARAR" Type="DateTime" Precision="3" />
+          <Property Name="C3_TL_SERIE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_TL_CORRELATIVO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AP_Dyn_Familias_30">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ElementID" Type="Int32" />
+          <Property Name="Creado" Type="DateTime" Precision="3" />
+          <Property Name="IdCreador" Type="Int32" />
+          <Property Name="TipoCreador" Type="Int32" />
+          <Property Name="Modificado" Type="DateTime" Precision="3" />
+          <Property Name="IdModificador" Type="Int32" />
+          <Property Name="TipoModificador" Type="Int32" />
+          <Property Name="C_FamilyClass" Type="Int32" />
+          <Property Name="C_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C_FamilyRecord_Priority" Type="Int32" />
+          <Property Name="C_FamilyRecord_Status" Type="Int32" />
+          <Property Name="C_FamilyRecord_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_FamilyRecord_From" Type="DateTime" Precision="3" />
+          <Property Name="C_FamilyRecord_To" Type="DateTime" Precision="3" />
+          <Property Name="C_SecureRoomID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Panel_1008_7074">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ElementID" Type="Int32" />
+          <Property Name="Creado" Type="DateTime" Precision="3" />
+          <Property Name="IdCreador" Type="Int32" />
+          <Property Name="TipoCreador" Type="Int32" />
+          <Property Name="Modificado" Type="DateTime" Precision="3" />
+          <Property Name="IdModificador" Type="Int32" />
+          <Property Name="TipoModificador" Type="Int32" />
+          <Property Name="C_ExecutedScript" Type="Int32" />
+          <Property Name="C_Register_creation_ProcessID" Type="Int32" />
+          <Property Name="C_Origin_Register_ID" Type="Int32" />
+          <Property Name="C_RegisterStatus" Type="Int32" />
+          <Property Name="C_Register_Origin_ID" Type="Int32" />
+          <Property Name="C_Register_Origin_Type" Type="Int32" />
+          <Property Name="C_Numerator" Type="Int32" />
+          <Property Name="C3_ND_IMPORTE_VISA" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_FE_FECHA_VISA" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1012,6 +1438,55 @@
           <EntitySetMapping Name="Panel_1008">
             <EntityTypeMapping TypeName="AuraPortal_BPMSModel.Panel_1008">
               <MappingFragment StoreEntitySet="Panel_1008">
+                <ScalarProperty Name="C3_PR3_DIF4" ColumnName="3_PR3_DIF4" />
+                <ScalarProperty Name="C3_PR3_DIF5" ColumnName="3_PR3_DIF5" />
+                <ScalarProperty Name="C3_PR3_DIF6" ColumnName="3_PR3_DIF6" />
+                <ScalarProperty Name="C3_PR3_DIF1" ColumnName="3_PR3_DIF1" />
+                <ScalarProperty Name="C3_PR3_DIF2" ColumnName="3_PR3_DIF2" />
+                <ScalarProperty Name="C3_PR3_DIF3" ColumnName="3_PR3_DIF3" />
+                <ScalarProperty Name="C3_PR3_REGULARIZAR_MONTO_VISA" ColumnName="3_PR3_REGULARIZAR_MONTO_VISA" />
+                <ScalarProperty Name="C3_PR3_REGULARIZAR_MES_VISA" ColumnName="3_PR3_REGULARIZAR_MES_VISA" />
+                <ScalarProperty Name="C3_PR3_REGULARIZAR_AÑO_VISA" ColumnName="3_PR3_REGULARIZAR_AÑO_VISA" />
+                <ScalarProperty Name="C3_PR3_FECH_TRANSFERENCIA_VISA" ColumnName="3_PR3_FECH_TRANSFERENCIA_VISA" />
+                <ScalarProperty Name="C8_PR3_AUTODETRACCIONES_3_TL_CORRELATIVO_AUTO_Cantidad" ColumnName="8_PR3_AUTODETRACCIONES/3_TL_CORRELATIVO_AUTO/Cantidad" />
+                <ScalarProperty Name="C8_GC_COMPROBANTES_TRANSITOS_0_AFECTA_DETRACCION_3_TL_MONTO_DETRACCION_CARGA_Y_Suma" ColumnName="8_GC_COMPROBANTES_TRANSITOS/0_AFECTA_DETRACCION/3_TL_MONTO_DETRACCION_CARGA_Y/Suma" />
+                <ScalarProperty Name="C8_PR3_AUTODETRACCIONES_3_PR3_MONTO_DEPOSITO_AUTO_Suma" ColumnName="8_PR3_AUTODETRACCIONES/3_PR3_MONTO_DEPOSITO_AUTO/Suma" />
+                <ScalarProperty Name="C3_PR3_INDICADOR2" ColumnName="3_PR3_INDICADOR2" />
+                <ScalarProperty Name="C3_PR3_INDICADOR3" ColumnName="3_PR3_INDICADOR3" />
+                <ScalarProperty Name="C3_PR3_INDICADOR4" ColumnName="3_PR3_INDICADOR4" />
+                <ScalarProperty Name="C3_PR3_INDICADOR5" ColumnName="3_PR3_INDICADOR5" />
+                <ScalarProperty Name="C3_PR3_INDICADOR1" ColumnName="3_PR3_INDICADOR1" />
+                <ScalarProperty Name="C8_PR3_DETRACCIONES_PENDIENTES_3_Tránsito_Cantidad" ColumnName="8_PR3_DETRACCIONES_PENDIENTES/3_Tránsito/Cantidad" />
+                <ScalarProperty Name="C8_PR3_DETRACCIONES_PENDIENTES_3_Detracción_Suma" ColumnName="8_PR3_DETRACCIONES_PENDIENTES/3_Detracción/Suma" />
+                <ScalarProperty Name="C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_VISA" ColumnName="3_PR3_REGULARIZAR_OTROS_DESCUENTOS_VISA" />
+                <ScalarProperty Name="C3_PR3_DIF_DETRACCION_BUSES" ColumnName="3_PR3_DIF_DETRACCION_BUSES" />
+                <ScalarProperty Name="C3_PR3_TIPO_DESCUENTO" ColumnName="3_PR3_TIPO_DESCUENTO" />
+                <ScalarProperty Name="C8_PR3_RETENCION_MENSUAL_CONCESIO_3_TL_IMPORTE_Suma_total" ColumnName="8_PR3_RETENCION_MENSUAL_CONCESIO/3_TL_IMPORTE/Suma_total" />
+                <ScalarProperty Name="C8_PR3_DETRACCIONES_3_TL_MONTO_DETRACION_Monto_total" ColumnName="8_PR3_DETRACCIONES/3_TL_MONTO_DETRACION/Monto_total" />
+                <ScalarProperty Name="C3_PR3_RET_RETENCIONES" ColumnName="3_PR3_RET_RETENCIONES" />
+                <ScalarProperty Name="C3_PR3_OBSERVACION5" ColumnName="3_PR3_OBSERVACION5" />
+                <ScalarProperty Name="C3_PR3_F_ESTADO_FAM" ColumnName="3_PR3_F_ESTADO_FAM" />
+                <ScalarProperty Name="C8_PR3_COB_DESCUENTO_DET_3_Monto_DET_Suma" ColumnName="8_PR3_COB_DESCUENTO_DET/3_Monto_DET/Suma" />
+                <ScalarProperty Name="C8_PR3_COB_DESCUENTO_TRAN_3_Monto_Suma" ColumnName="8_PR3_COB_DESCUENTO_TRAN/3_Monto/Suma" />
+                <ScalarProperty Name="C8_PR3_COB_DESCUENTO_VISA_3_Monto_VISA_Suma" ColumnName="8_PR3_COB_DESCUENTO_VISA/3_Monto_VISA/Suma" />
+                <ScalarProperty Name="C3_PR3_VISA_COB_TOTAL" ColumnName="3_PR3_VISA_COB_TOTAL" />
+                <ScalarProperty Name="C3_PR3_VISA_COB_MONTO" ColumnName="3_PR3_VISA_COB_MONTO" />
+                <ScalarProperty Name="C3_PR3_TRAN_COB_TOTAL" ColumnName="3_PR3_TRAN_COB_TOTAL" />
+                <ScalarProperty Name="C3_PR3_VISA_COB_MES_ANT" ColumnName="3_PR3_VISA_COB_MES_ANT" />
+                <ScalarProperty Name="C3_PR3_TRAN_COB_MONTO" ColumnName="3_PR3_TRAN_COB_MONTO" />
+                <ScalarProperty Name="C3_PR3_TRAN_COB_MES_ANT" ColumnName="3_PR3_TRAN_COB_MES_ANT" />
+                <ScalarProperty Name="C3_PR3_DET_COB_TOTAL" ColumnName="3_PR3_DET_COB_TOTAL" />
+                <ScalarProperty Name="C3_PR3_DET_COB_MONTO" ColumnName="3_PR3_DET_COB_MONTO" />
+                <ScalarProperty Name="C3_PR3_DET_COB_MES_ANT" ColumnName="3_PR3_DET_COB_MES_ANT" />
+                <ScalarProperty Name="C3_PR3_DESC_SIN_RETENCION" ColumnName="3_PR3_DESC_SIN_RETENCION" />
+                <ScalarProperty Name="C2_PR3_CORREO_COPIA_PR3_TEXTO" ColumnName="2_PR3_CORREO_COPIA/PR3_TEXTO" />
+                <ScalarProperty Name="C2_PR3_CORREO_COPIA_Id_" ColumnName="2_PR3_CORREO_COPIA/Id." />
+                <ScalarProperty Name="C3_PR3_REGULARIZAR_OTROS_DESCUENTOS_DET" ColumnName="3_PR3_REGULARIZAR_OTROS_DESCUENTOS_DET" />
+                <ScalarProperty Name="C8_A__PR3_TRANSITO_TERRAPUERTO_3_TL_PLACA_TERR_Total_Cantidad" ColumnName="8_A!_PR3_TRANSITO_TERRAPUERTO/3_TL_PLACA_TERR/Total_Cantidad" />
+                <ScalarProperty Name="C3_PR3_FAM_TEXTO_AÑO" ColumnName="3_PR3_FAM_TEXTO_AÑO" />
+                <ScalarProperty Name="C3_PR3_EN_AÑO_POSTERIOR" ColumnName="3_PR3_EN_AÑO_POSTERIOR" />
+                <ScalarProperty Name="C3_PR3_EN_AÑO_ANTERIOR" ColumnName="3_PR3_EN_AÑO_ANTERIOR" />
+                <ScalarProperty Name="C3_PR3_NUEVO_EXCEL" ColumnName="3_PR3_NUEVO_EXCEL" />
                 <ScalarProperty Name="C3_PR3_REGULARIZAR_AÑO" ColumnName="3_PR3_REGULARIZAR_AÑO" />
                 <ScalarProperty Name="C3_PR3_REGULARIZAR_MES" ColumnName="3_PR3_REGULARIZAR_MES" />
                 <ScalarProperty Name="C3_PR3_REGULARIZAR_MONTO" ColumnName="3_PR3_REGULARIZAR_MONTO" />
@@ -1287,6 +1762,69 @@
           <EntitySetMapping Name="Panel_1009">
             <EntityTypeMapping TypeName="AuraPortal_BPMSModel.Panel_1009">
               <MappingFragment StoreEntitySet="Panel_1009">
+                <ScalarProperty Name="C8_PR3_TRANSITOS_VISA_COVIPERU_3_ND_IMPORTE_VISA_Suma" ColumnName="8_PR3_TRANSITOS_VISA_COVIPERU/3_ND_IMPORTE_VISA/Suma" />
+                <ScalarProperty Name="C3_PR3_COM_POR_TRANSFERIR_SN_VISA" ColumnName="3_PR3_COM_POR_TRANSFERIR_SN_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_POR_TRANSFERIR_VISA" ColumnName="3_PR3_COM_POR_TRANSFERIR_VISA" />
+                <ScalarProperty Name="C3_PR3_INDICADOR4" ColumnName="3_PR3_INDICADOR4" />
+                <ScalarProperty Name="C3_PR3_INDICADOR3" ColumnName="3_PR3_INDICADOR3" />
+                <ScalarProperty Name="C3_PR3_INDICADOR2" ColumnName="3_PR3_INDICADOR2" />
+                <ScalarProperty Name="C2_PR3_CORREO_COPIA_Id_" ColumnName="2_PR3_CORREO_COPIA/Id." />
+                <ScalarProperty Name="C2_PR3_CORREO_COPIA_PR3_TEXTO" ColumnName="2_PR3_CORREO_COPIA/PR3_TEXTO" />
+                <ScalarProperty Name="C3_PR3_ASUNTO2" ColumnName="3_PR3_ASUNTO2" />
+                <ScalarProperty Name="C3_PR3_COM_RES_DIFERENCIA_VISA" ColumnName="3_PR3_COM_RES_DIFERENCIA_VISA" />
+                <ScalarProperty Name="C3_PR3_FE_FECHA_COM_FINAL_AJUSTE_VISA" ColumnName="3_PR3_FE_FECHA_COM_FINAL_AJUSTE_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FINAL_DIFERENCIA_AJUSTE_VISA" ColumnName="3_PR3_COM_FINAL_DIFERENCIA_AJUSTE_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_RECAUDACION_VISA" ColumnName="3_PR3_COM_PP_RECAUDACION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_VALOR_COMISION_VISA" ColumnName="3_PR3_COM_PP_VALOR_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_TRANSITO_SIN_IGV_VISA" ColumnName="3_PR3_COM_PP_TRANSITO_SIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_PP_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_IGV_VISA" ColumnName="3_PR3_COM_PP_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_PP_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_AJUSTE_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_PP_AJUSTE_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_AJUSTE_IGV_VISA" ColumnName="3_PR3_COM_PP_AJUSTE_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_MES_AJUSTE_VISA" ColumnName="3_PR3_COM_PP_MES_AJUSTE_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_AÑO_AJUSTE_VISA" ColumnName="3_PR3_COM-PP_AÑO_AJUSTE_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_FIN_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_PP_FIN_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_FIN_IGV_VISA" ColumnName="3_PR3_COM_PP_FIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PP_FIN_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_PP_FIN_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_RECAUDACION_VISA" ColumnName="3_PR3_COM_FP_RECAUDACION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_TRANSITO_SIN_IGV_VISA" ColumnName="3_PR3_COM_FP_TRANSITO_SIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_FP_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_IGV_VISA" ColumnName="3_PR3_COM_FP_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_FP_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_DIF_TRANSITO_SIN_IGV_VISA" ColumnName="3_PR3_COM_FP_DIF_TRANSITO_SIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_DIF_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_FP_DIF_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FINAL_DIFERENCIA_VISA" ColumnName="3_PR3_COM_FINAL_DIFERENCIA_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_TRANSITO_SIN_IGV_VISA" ColumnName="3_PR3_COM_PA_TRANSITO_SIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_PA_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_IGV_VISA" ColumnName="3_PR3_COM_PA_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_PA_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_DIF_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_FP_DIF_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FP_DIF_IGV_VISA" ColumnName="3_PR3_COM_FP_DIF_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_DIF_AÑO_AJUSTE_VISA" ColumnName="3_PR3_DIF_AÑO_AJUSTE_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_FIN_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_PA_FIN_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_FIN_IGV_VISA" ColumnName="3_PR3_COM_PA_FIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_FIN_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_PA_FIN_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_TRANSITO_SIN_IGV_VISA" ColumnName="3_PR3_COM_FA_TRANSITO_SIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_FA_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_IGV_VISA" ColumnName="3_PR3_COM_FA_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_FA_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_DIF_TRANSITO_SIN_IGV_VISA" ColumnName="3_PR3_COM_FA_DIF_TRANSITO_SIN_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_DIF_MONTO_COMISION_VISA" ColumnName="3_PR3_COM_FA_DIF_MONTO_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_DIF_IGV_VISA" ColumnName="3_PR3_COM_FA_DIF_IGV_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_DIF_TOTAL_COMISION_VISA" ColumnName="3_PR3_COM_FA_DIF_TOTAL_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_FA_RECAUDACION_VISA" ColumnName="3_PR3_COM_FA_RECAUDACION_VISA" />
+                <ScalarProperty Name="C3_PR3_FE_FECHA_COM_FINAL_VISA" ColumnName="3_PR3_FE_FECHA_COM_FINAL_VISA" />
+                <ScalarProperty Name="C3_PR3_DIF_MES_AJUSTE_VISA" ColumnName="3_PR3_DIF_MES_AJUSTE_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_VALOR_COMISION_VISA" ColumnName="3_PR3_COM_PA_VALOR_COMISION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_PA_RECAUDACION_VISA" ColumnName="3_PR3_COM_PA_RECAUDACION_VISA" />
+                <ScalarProperty Name="C3_PR3_COM_CONTADOR_COVIPERU" ColumnName="3_PR3_COM_CONTADOR_COVIPERU" />
+                <ScalarProperty Name="C3_PR3_INDICADOR1" ColumnName="3_PR3_INDICADOR1" />
+                <ScalarProperty Name="C3_PR3_FECHA_MENOR" ColumnName="3_PR3_FECHA_MENOR" />
+                <ScalarProperty Name="C3_PR3_CORREO_DAYA" ColumnName="3_PR3_CORREO_DAYA" />
+                <ScalarProperty Name="C3_PR3_EN_AÑO_ANTERIOR_TEXTO" ColumnName="3_PR3_EN_AÑO_ANTERIOR_TEXTO" />
+                <ScalarProperty Name="C3_PR3_NUEVO_EXCEL" ColumnName="3_PR3_NUEVO_EXCEL" />
+                <ScalarProperty Name="C3_PR3_EN_AÑO_ANTERIOR" ColumnName="3_PR3_EN_AÑO_ANTERIOR" />
                 <ScalarProperty Name="C3_PR3_COM_POR_TRANSFERIR_SN" ColumnName="3_PR3_COM_POR_TRANSFERIR_SN" />
                 <ScalarProperty Name="C3_PR3_CANT_RECORDATORIO" ColumnName="3_PR3_CANT_RECORDATORIO" />
                 <ScalarProperty Name="C3_PR3_MES_TRANSFERENCIA" ColumnName="3_PR3_MES_TRANSFERENCIA" />
@@ -1378,6 +1916,107 @@
                 <ScalarProperty Name="C3_A__PR3_FS_FECHA_FIN" ColumnName="3_A!_PR3_FS_FECHA_FIN" />
                 <ScalarProperty Name="C_List_of_Process_Themes" ColumnName="_List of Process Themes" />
                 <ScalarProperty Name="C_List_of_Process_References" ColumnName="_List of Process References" />
+                <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
+                <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
+                <ScalarProperty Name="Modificado" ColumnName="Modificado" />
+                <ScalarProperty Name="TipoCreador" ColumnName="TipoCreador" />
+                <ScalarProperty Name="IdCreador" ColumnName="IdCreador" />
+                <ScalarProperty Name="Creado" ColumnName="Creado" />
+                <ScalarProperty Name="C_ElementID" ColumnName="_ElementID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Panel_1009_4916">
+            <EntityTypeMapping TypeName="AuraPortal_BPMSModel.Panel_1009_4916">
+              <MappingFragment StoreEntitySet="Panel_1009_4916">
+                <ScalarProperty Name="C3_TL_CORRELATIVO" ColumnName="3_TL_CORRELATIVO" />
+                <ScalarProperty Name="C3_TL_SERIE" ColumnName="3_TL_SERIE" />
+                <ScalarProperty Name="C3_F_ENVIADO_DECLARAR" ColumnName="3_F_ENVIADO_DECLARAR" />
+                <ScalarProperty Name="C3_F_ENVIADO_DECLARAR_TEXTO" ColumnName="3_F_ENVIADO_DECLARAR_TEXTO" />
+                <ScalarProperty Name="C3_F_FECHA_VENCIMIENTO_TEXTO" ColumnName="3_F_FECHA_VENCIMIENTO_TEXTO" />
+                <ScalarProperty Name="C3_FE_FECHA_EMISION_CP_TEXTO" ColumnName="3_FE_FECHA_EMISION_CP_TEXTO" />
+                <ScalarProperty Name="C3_TL_OBSERVACIONES" ColumnName="3_TL_OBSERVACIONES" />
+                <ScalarProperty Name="C3_TL_TIPO_EMISION" ColumnName="3_TL_TIPO_EMISION" />
+                <ScalarProperty Name="C3_TL_HABILITADO" ColumnName="3_TL_HABILITADO" />
+                <ScalarProperty Name="C3_TL_OBSERVACION_SUNAT" ColumnName="3_TL_OBSERVACION_SUNAT" />
+                <ScalarProperty Name="C3_TL_ESTADO_DOC" ColumnName="3_TL_ESTADO_DOC" />
+                <ScalarProperty Name="C3_F_FECHA_VENCIMIENTO" ColumnName="3_F_FECHA_VENCIMIENTO" />
+                <ScalarProperty Name="C3_TL_OTROS_CARGOS" ColumnName="3_TL_OTROS_CARGOS" />
+                <ScalarProperty Name="C3_TL_OTROS_IMPUESTOS" ColumnName="3_TL_OTROS_IMPUESTOS" />
+                <ScalarProperty Name="C3_TL_IGV_CP" ColumnName="3_TL_IGV_CP" />
+                <ScalarProperty Name="C3_TL_OP_NO_GRAVADA" ColumnName="3_TL_OP_NO_GRAVADA" />
+                <ScalarProperty Name="C3_TL_OP_GRAVADA" ColumnName="3_TL_OP_GRAVADA" />
+                <ScalarProperty Name="C3_TL_ORDEN_COMPRA" ColumnName="3_TL_ORDEN_COMPRA" />
+                <ScalarProperty Name="C3_TM_DETALLE" ColumnName="3_TM_DETALLE" />
+                <ScalarProperty Name="C3_SS_OBSERVACION_CP" ColumnName="3_SS_OBSERVACION_CP" />
+                <ScalarProperty Name="C3_TL_CONCAT_CP" ColumnName="3_TL_CONCAT_CP" />
+                <ScalarProperty Name="C3_ND_DETRACCION_TOTAL_CP" ColumnName="3_ND_DETRACCION_TOTAL_CP" />
+                <ScalarProperty Name="C3_TL_DETRACCION_TOTAL_CP" ColumnName="3_TL_DETRACCION_TOTAL_CP" />
+                <ScalarProperty Name="C3_TL_CUENTA_CP" ColumnName="3_TL_CUENTA_CP" />
+                <ScalarProperty Name="C3_TL_CONCESIONARIA_CP" ColumnName="3_TL_CONCESIONARIA_CP" />
+                <ScalarProperty Name="C3_TL_DOCUMENTO_REFERENCIA_CP" ColumnName="3_TL_DOCUMENTO_REFERENCIA_CP" />
+                <ScalarProperty Name="C3_TL_ESTADO_DOC_TRIBUTARIO_CP" ColumnName="3_TL_ESTADO_DOC_TRIBUTARIO_CP" />
+                <ScalarProperty Name="C3_FE_FECHA_EMISION_CP" ColumnName="3_FE_FECHA_EMISION_CP" />
+                <ScalarProperty Name="C3_TL_IMPORTE_TOTAL_CP" ColumnName="3_TL_IMPORTE_TOTAL_CP" />
+                <ScalarProperty Name="C3_ND_IMPORTE_TOTAL_CP" ColumnName="3_ND_IMPORTE_TOTAL_CP" />
+                <ScalarProperty Name="C3_TL_MONEDA_CP" ColumnName="3_TL_MONEDA_CP" />
+                <ScalarProperty Name="C3_TL_NRO_COMPROBANTE_CP" ColumnName="3_TL_NRO_COMPROBANTE_CP" />
+                <ScalarProperty Name="C3_TL_TIPO_DOCUMENTO_CP" ColumnName="3_TL_TIPO_DOCUMENTO_CP" />
+                <ScalarProperty Name="C3_TL_NOMBRE_CLIENTE_CP" ColumnName="3_TL_NOMBRE_CLIENTE_CP" />
+                <ScalarProperty Name="C3_TL_RUC_CLIENTE_CP" ColumnName="3_TL_RUC_CLIENTE_CP" />
+                <ScalarProperty Name="C_Numerator" ColumnName="_Numerator" />
+                <ScalarProperty Name="C_Register_Origin_Type" ColumnName="_Register Origin Type" />
+                <ScalarProperty Name="C_Register_Origin_ID" ColumnName="_Register Origin ID" />
+                <ScalarProperty Name="C_RegisterStatus" ColumnName="_RegisterStatus" />
+                <ScalarProperty Name="C_Origin_Register_ID" ColumnName="_Origin Register ID" />
+                <ScalarProperty Name="C_Register_creation_ProcessID" ColumnName="_Register creation ProcessID" />
+                <ScalarProperty Name="C_ExecutedScript" ColumnName="_ExecutedScript" />
+                <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
+                <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
+                <ScalarProperty Name="Modificado" ColumnName="Modificado" />
+                <ScalarProperty Name="TipoCreador" ColumnName="TipoCreador" />
+                <ScalarProperty Name="IdCreador" ColumnName="IdCreador" />
+                <ScalarProperty Name="Creado" ColumnName="Creado" />
+                <ScalarProperty Name="C_ElementID" ColumnName="_ElementID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AP_Dyn_Familias_30">
+            <EntityTypeMapping TypeName="AuraPortal_BPMSModel.AP_Dyn_Familias_30">
+              <MappingFragment StoreEntitySet="AP_Dyn_Familias_30">
+                <ScalarProperty Name="C_SecureRoomID" ColumnName="_SecureRoomID" />
+                <ScalarProperty Name="C_FamilyRecord_To" ColumnName="_FamilyRecord-To" />
+                <ScalarProperty Name="C_FamilyRecord_From" ColumnName="_FamilyRecord-From" />
+                <ScalarProperty Name="C_FamilyRecord_Description" ColumnName="_FamilyRecord-Description" />
+                <ScalarProperty Name="C_FamilyRecord_Status" ColumnName="_FamilyRecord-Status" />
+                <ScalarProperty Name="C_FamilyRecord_Priority" ColumnName="_FamilyRecord-Priority" />
+                <ScalarProperty Name="C_Name" ColumnName="_Name" />
+                <ScalarProperty Name="C_FamilyClass" ColumnName="_FamilyClass" />
+                <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
+                <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
+                <ScalarProperty Name="Modificado" ColumnName="Modificado" />
+                <ScalarProperty Name="TipoCreador" ColumnName="TipoCreador" />
+                <ScalarProperty Name="IdCreador" ColumnName="IdCreador" />
+                <ScalarProperty Name="Creado" ColumnName="Creado" />
+                <ScalarProperty Name="C_ElementID" ColumnName="_ElementID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Panel_1008_7074">
+            <EntityTypeMapping TypeName="AuraPortal_BPMSModel.Panel_1008_7074">
+              <MappingFragment StoreEntitySet="Panel_1008_7074">
+                <ScalarProperty Name="C3_FE_FECHA_VISA" ColumnName="3_FE_FECHA_VISA" />
+                <ScalarProperty Name="C3_ND_IMPORTE_VISA" ColumnName="3_ND_IMPORTE_VISA" />
+                <ScalarProperty Name="C_Numerator" ColumnName="_Numerator" />
+                <ScalarProperty Name="C_Register_Origin_Type" ColumnName="_Register Origin Type" />
+                <ScalarProperty Name="C_Register_Origin_ID" ColumnName="_Register Origin ID" />
+                <ScalarProperty Name="C_RegisterStatus" ColumnName="_RegisterStatus" />
+                <ScalarProperty Name="C_Origin_Register_ID" ColumnName="_Origin Register ID" />
+                <ScalarProperty Name="C_Register_creation_ProcessID" ColumnName="_Register creation ProcessID" />
+                <ScalarProperty Name="C_ExecutedScript" ColumnName="_ExecutedScript" />
                 <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
                 <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
                 <ScalarProperty Name="Modificado" ColumnName="Modificado" />

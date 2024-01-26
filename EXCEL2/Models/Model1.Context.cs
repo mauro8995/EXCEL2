@@ -36,6 +36,9 @@ namespace EXCEL2.Models
         public virtual DbSet<AP__DocIntegratedStorage> AP__DocIntegratedStorage { get; set; }
         public virtual DbSet<AP_Dyn_Familias_27> AP_Dyn_Familias_27 { get; set; }
         public virtual DbSet<Panel_1009> Panel_1009 { get; set; }
+        public virtual DbSet<Panel_1009_4916> Panel_1009_4916 { get; set; }
+        public virtual DbSet<AP_Dyn_Familias_30> AP_Dyn_Familias_30 { get; set; }
+        public virtual DbSet<Panel_1008_7074> Panel_1008_7074 { get; set; }
     
         public virtual ObjectResult<PROCEDURE_GENERATE_EXCEL_Result> PROCEDURE_GENERATE_EXCEL()
         {

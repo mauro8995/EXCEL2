@@ -1,9 +1,13 @@
-﻿using EXCEL2.Models;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using EXCEL2.Models;
 using EXCEL2.Models.Listas;
 using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -284,21 +288,14 @@ namespace EXCEL2.Controllers
             {
                 foreach (var item2 in meses)
                 {
-                    if (item2.MesNumero == item.C3_PR3_MES_TRANSFERENCIA.Value.ToString("00"))
+                    if (item2.MesNumero == item.C3_PR3_MES_TRANSFERENCIA.Value.ToString("00") && item2.Anio == anio)
                     {
-                        if (DateTime.Now.Year == item.C3_PR3_EN_AÑO)
-                        {
+                        
                             hoja1.Cells[item2.Posicion + '6'].Value = item.C3_PR3_COM_FA_RECAUDACION;
-                            hoja1.Cells[item2.Posicion + (filaActual + 2)].Value = item.C3_PR3_COM_PA_RECAUDACION;
-                            hoja1.Cells[item2.Posicion + (filaActual + 3)].Value = item.C3_PR3_COM_FINAL_DIFERENCIA;
-                        }
-                        else
-                        {
-                            hoja1.Cells["S" + '6'].Value = item.C3_PR3_COM_FINAL_DIFERENCIA;
-                        }
+                        
                         hoja1.Cells[item2.Posicion + '6'].Style.Numberformat.Format = "\"S/\"#,##0.00";
-                        hoja1.Cells[item2.Posicion + (filaActual + 2)].Style.Numberformat.Format = "\"S/\"#,##0.00";
-                        hoja1.Cells[item2.Posicion + (filaActual + 3)].Style.Numberformat.Format = "\"S/\"#,##0.00";
+                        //hoja1.Cells[item2.Posicion + (filaActual + 2)].Style.Numberformat.Format = "\"S/\"#,##0.00";
+                        //hoja1.Cells[item2.Posicion + (filaActual + 3)].Style.Numberformat.Format = "\"S/\"#,##0.00";
                     }
                 }
             }
@@ -309,14 +306,9 @@ namespace EXCEL2.Controllers
 
             int filaActualHoja2 = 6;
             int columnaIndexHoja2 = 1;
-            string valorCeldaHoja2 = "";
             while (hoja2.Cells[filaActualHoja2, columnaIndexHoja2].Value != null)
             {
-                // Obtener el valor de la celda actual
-                valorCeldaHoja2 = (string)hoja2.Cells[filaActualHoja2, columnaIndexHoja2].Value;
-
-
-                // Mover a la siguiente fila
+                
                 filaActualHoja2++;
             }
 
@@ -324,21 +316,16 @@ namespace EXCEL2.Controllers
             {
                 foreach (var item2 in meses)
                 {
-                    if (item2.MesNumero == item.C3_PR3_MES_TRANSFERENCIA.Value.ToString("00"))
+                    if (item2.MesNumero == item.C3_PR3_MES_TRANSFERENCIA.Value.ToString("00") && item2.Anio == anio)
                     {
-                        if (DateTime.Now.Year == item.C3_PR3_EN_AÑO)
-                        {
+                        
                             hoja2.Cells[item2.Posicion + '6'].Value = item.C8_GC_COMPROBANTES_TRANSITOS_3_ND_DETRACCION_TOTAL_RT_ND_TOTAL_DETRACCION;
-                            hoja2.Cells[item2.Posicion + (filaActual + 2)].Value = item.C8_GC_COMPROBANTES_TRANSITOS_3_ND_DETRACCION_TOTAL_RT_ND_TOTAL_DETRACCION;
-                            hoja2.Cells[item2.Posicion + (filaActual + 3)].Value = item.C3_PR3_COM_POR_TRANSFERIR_DET;
-                        }
-                        else
-                        {
-                            hoja2.Cells["S" + '6'].Value = item.C8_GC_COMPROBANTES_TRANSITOS_3_ND_DETRACCION_TOTAL_RT_ND_TOTAL_DETRACCION;
-                        }
+                            //hoja2.Cells[item2.Posicion + (filaActual + 2)].Value = item.C8_GC_COMPROBANTES_TRANSITOS_3_ND_DETRACCION_TOTAL_RT_ND_TOTAL_DETRACCION;
+                            //hoja2.Cells[item2.Posicion + (filaActual + 3)].Value = item.C3_PR3_COM_POR_TRANSFERIR_DET;
+                        
                         hoja2.Cells[item2.Posicion + '6'].Style.Numberformat.Format = "\"S/\"#,##0.00";
-                        hoja2.Cells[item2.Posicion + (filaActual + 2)].Style.Numberformat.Format = "\"S/\"#,##0.00";
-                        hoja2.Cells[item2.Posicion + (filaActual + 3)].Style.Numberformat.Format = "\"S/\"#,##0.00";
+                        //hoja2.Cells[item2.Posicion + (filaActual + 2)].Style.Numberformat.Format = "\"S/\"#,##0.00";
+                        //hoja2.Cells[item2.Posicion + (filaActual + 3)].Style.Numberformat.Format = "\"S/\"#,##0.00";
                     }
                 }
             }
@@ -408,5 +395,134 @@ namespace EXCEL2.Controllers
             return package;
         }
 
-    }
+
+
+
+        //Consolidado de comprovantes------------------------------
+
+        [HttpGet]
+		public ActionResult ConsolidadoComprobantes(int idPanel)
+        {
+			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+			// Crear un nuevo paquete Excel
+			byte[] bytesDelExcel = ObtenerExcelConsolidadoComprobantes(idPanel); // Reemplaza esto con tus propios datos
+
+			// Crear un MemoryStream a partir de los bytes del Excel
+			using (MemoryStream memoryStream = new MemoryStream(bytesDelExcel))
+			{
+				// Crear un paquete Excel a partir del MemoryStream
+				using (ExcelPackage package = new ExcelPackage(memoryStream))
+				{
+
+					// Obtener el contenido del paquete en un array de bytes
+					byte[] excelBytes = ConsolidadoComprobantesEdit(package, idPanel).GetAsByteArray();
+
+					return Json(UpdateExcelConsolidadoComprobantes(idPanel,excelBytes));
+
+
+					// Devolver el archivo Excel al cliente como descarga
+					return File(excelBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "archivo_excel.xlsx");
+				}
+			}
+		}
+
+        public byte[] ObtenerExcelConsolidadoComprobantes(int idPanel)
+        {
+			var elemeto = db.Panel_1009.Where(x => x.ID == idPanel).First();
+			var integrate = db.AP__DocIntegratedStorage.Where(x => x.IntegrationObjectId == elemeto.C_ElementID).Where(x => x.AscTermId == 251).First();
+			var integrateData = db.AP__DocIntegratedDataStorage.Where(x => x.AscDocId == integrate.ID).First();
+			return integrateData.Content;
+		}
+
+		public byte[] UpdateExcelConsolidadoComprobantes(int idPanel,byte[] excelBytes)
+		{
+			var elemeto = db.Panel_1009.Where(x => x.ID == idPanel).First();
+			var integrate = db.AP__DocIntegratedStorage.Where(x => x.IntegrationObjectId == elemeto.C_ElementID).Where(x => x.AscTermId == 251).First();
+			var integrateData = db.AP__DocIntegratedDataStorage.Where(x => x.AscDocId == integrate.ID).First();
+
+			integrateData.Content = excelBytes;
+			db.Entry(integrateData).State = EntityState.Modified;
+			db.SaveChanges();
+			return integrateData.Content;
+		}
+
+		public ExcelPackage ConsolidadoComprobantesEdit(ExcelPackage package, int idPanel)
+        {
+			List<string> nombresDeHojas = new List<string>();
+			foreach (var worksheet in package.Workbook.Worksheets)
+			{
+				nombresDeHojas.Add(worksheet.Name);
+			}
+			ExcelWorksheet hoja1 = package.Workbook.Worksheets[nombresDeHojas[0]];
+
+            int filaInicial = 4;
+
+            var Comprobantes = db.Panel_1009_4916.Where(x => x.C_ElementID == idPanel).OrderBy(x => x.C3_TL_NRO_COMPROBANTE_CP).ThenBy(x => x.C3_FE_FECHA_EMISION_CP).ToList();
+
+
+            foreach (var item in Comprobantes)
+            {
+
+				ExcelRange border = hoja1.Cells["A" + filaInicial + ":V" + filaInicial];
+
+				// Agregar bordes al rango de celdas
+				border.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+				border.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+				border.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+				border.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+				hoja1.Cells["A" + filaInicial].Value = item.C3_TL_RUC_CLIENTE_CP;
+				hoja1.Cells["B" + filaInicial].Value = item.C3_TL_NOMBRE_CLIENTE_CP;
+				hoja1.Cells["C" + filaInicial].Value = item.C3_TL_TIPO_DOCUMENTO_CP;
+				hoja1.Cells["D" + filaInicial].Value = item.C3_TL_NRO_COMPROBANTE_CP;
+				hoja1.Cells["E" + filaInicial].Value = item.C3_TL_ORDEN_COMPRA;
+				hoja1.Cells["F" + filaInicial].Value = item.C3_TL_MONEDA_CP;
+				hoja1.Cells["G" + filaInicial].Value = item.C3_TL_OP_GRAVADA;
+				hoja1.Cells["H" + filaInicial].Value = item.C3_TL_OP_NO_GRAVADA;
+				hoja1.Cells["I" + filaInicial].Value = item.C3_TL_IGV_CP;
+				hoja1.Cells["J" + filaInicial].Value = item.C3_TL_OTROS_IMPUESTOS;
+				hoja1.Cells["K" + filaInicial].Value = item.C3_TL_OTROS_CARGOS;
+				hoja1.Cells["L" + filaInicial].Value = item.C3_ND_IMPORTE_TOTAL_CP;
+				hoja1.Cells["L" + filaInicial].Style.Numberformat.Format = "\"S/\"#,##0.00";
+				ExcelRange CentrarTotal = hoja1.Cells["L" + filaInicial];
+				CentrarTotal.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+				CentrarTotal.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+				if (item.C3_FE_FECHA_EMISION_CP != null)
+                {
+					hoja1.Cells["M" + filaInicial].Value = item.C3_FE_FECHA_EMISION_CP.Value.ToString("dd/MM/yyyy");
+				}
+				if (item.C3_F_FECHA_VENCIMIENTO != null)
+				{
+					hoja1.Cells["M" + filaInicial].Value = item.C3_F_FECHA_VENCIMIENTO.Value.ToString("dd/MM/yyyy");
+				}
+
+				hoja1.Cells["O" + filaInicial].Value = item.C3_TL_ESTADO_DOC;
+				hoja1.Cells["P" + filaInicial].Value = item.C3_TL_ESTADO_DOC_TRIBUTARIO_CP;
+				hoja1.Cells["Q" + filaInicial].Value = item.C3_F_ENVIADO_DECLARAR_TEXTO;
+				hoja1.Cells["R" + filaInicial].Value = item.C3_TL_DOCUMENTO_REFERENCIA_CP;
+				hoja1.Cells["S" + filaInicial].Value = item.C3_TL_OBSERVACION_SUNAT;
+				hoja1.Cells["T" + filaInicial].Value = item.C3_TL_HABILITADO;
+				hoja1.Cells["U" + filaInicial].Value = item.C3_TL_TIPO_EMISION;
+				hoja1.Cells["V" + filaInicial].Value = item.C3_TL_OBSERVACIONES;
+                filaInicial++;
+			}
+
+			hoja1.Cells["L" + filaInicial].Value = Comprobantes.Sum(x=> x.C3_ND_IMPORTE_TOTAL_CP);
+			hoja1.Cells["L" + filaInicial].Style.Numberformat.Format = "\"S/\"#,##0.00";
+
+
+			ExcelRange range = hoja1.Cells["L" + filaInicial]; // Ejemplo: celda A1
+
+			// Aplicar un color de fondo
+			range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+            System.Drawing.Color hexColor = ColorTranslator.FromHtml("#99CCFF");
+			range.Style.Fill.BackgroundColor.SetColor(hexColor);
+			range.Style.Font.Bold = true;
+			return package;
+		}
+
+
+
+      
+
+	}
 }
