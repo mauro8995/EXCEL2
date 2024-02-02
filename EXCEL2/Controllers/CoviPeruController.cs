@@ -277,6 +277,7 @@ namespace EXCEL2.Controllers
 				if (filtro.C3_PR3_REGULARIZAR_AÑO == item.Anio && filtro.C3_PR3_REGULARIZAR_MES == Int32.Parse(item.MesNumero))
 				{
 					hoja1.Cells[item.Posicion + nuevaFila.ToString()].Value = filtro.C3_PR3_REGULARIZAR_MONTO;
+					hoja1.Cells[item.Posicion + nuevaFila.ToString()].Style.Numberformat.Format = "\"S/\"#,##0.00";
 				}
 			}
 
@@ -339,8 +340,22 @@ namespace EXCEL2.Controllers
 			hoja2.Cells["E" + nuevaFila_hoja2].Style.Font.Bold = true;
 			hoja2.Cells["E" + nuevaFila_hoja2].Style.Numberformat.Format = "\"S/\"#,##0.00";
 
-			//-------------- hoja 2
-			ExcelWorksheet hoja3 = package.Workbook.Worksheets[nombresDeHojas[2]];
+			if ((bool)filtro.C3_PR3_ENVIO_DET_BUSES_MENSUAL)
+			{
+				DateTime fechaModificada = filtro.C3_A__PR3_FS_F_FECHA_INICIO_PROCESO.Value.AddMonths(-1);
+				foreach (var item2 in meses)
+				{
+					if (item2.MesNumero == fechaModificada.Month.ToString("00") && item2.Anio == fechaModificada.Year)
+					{
+						hoja2.Cells[item2.Posicion + "6"].Value = filtro.C8_PR3_DETRACCIONES_3_TL_MONTO_DETRACION_Monto_total;
+						hoja2.Cells[item2.Posicion + "6".ToString()].Style.Numberformat.Format = "\"S/\"#,##0.00";
+					}
+				}
+			}
+
+
+				//-------------- hoja 3
+				ExcelWorksheet hoja3 = package.Workbook.Worksheets[nombresDeHojas[2]];
 			int filaActual_hoja3 = 6;
 			int columnaIndex_hoja3 = 1;
 
@@ -489,56 +504,7 @@ namespace EXCEL2.Controllers
 				}
 			}
 
-			//------------------hoja 2
-
-			ExcelWorksheet hoja2 = package.Workbook.Worksheets[nombresDeHojas[1]];
-
-			int filaActual_hoja2 = 6;
-
-			while (hoja1.Cells[filaActual_hoja2, 1].Value != null)
-			{
-				filaActual_hoja2++;
-			}
-
-			var startCellHoja2 = hoja2.Cells["G" + (filaActual_hoja2)];
-			var endCell_hoja2 = hoja2.Cells["U" + (filaActual_hoja2)];
-			var range_hoja2 = hoja2.Cells[startCell.Address + ":" + endCell.Address];
-			bool insertarFila_hoja2 = false;
-			foreach (var cell in range_hoja2)
-			{
-				// Verifica si la celda tiene contenido
-				if (cell.Text != "")
-				{
-					insertarFila = true;
-					break;
-				}
-			}
-
-			if (insertarFila_hoja2)
-			{
-				filaActual_hoja2++;
-			}
-
-
-			//var Comision_hoja2 = db.Panel_1009.Where(x => x.C3_PR3_ID_PANEL == idPanel).ToList();
-
-			foreach (var item in Comision)
-			{
-				foreach (var item2 in meses)
-				{
-					if (item2.MesNumero == item.C3_PR3_MES_TRANSFERENCIA.Value.ToString("00"))
-					{
-						if (item2.Anio == item.C3_PR3_EN_AÑO)
-						{
-							hoja2.Cells[item2.Posicion + '6'].Value = item.C8_GC_COMPROBANTES_TRANSITOS_3_ND_DETRACCION_TOTAL_RT_ND_TOTAL_DETRACCION;
-							hoja2.Cells[item2.Posicion + '6'].Style.Numberformat.Format = "\"S/\"#,##0.00";
-							//string formula_1 = "=SUM(" + item2.Posicion + "7:" + item2.Posicion.ToString() + (filaActual) + ")";
-							//hoja1.Cells[item2.Posicion + (filaActual + 2)].Formula = formula_1;
-							//hoja1.Cells[item2.Posicion + (filaActual + 3)].Formula = "=" + item2.Posicion + (filaActual + 2) + "-" + item2.Posicion + "6";
-						}
-					}
-				}
-			}
+			
 
 			//------------------hoja 3
 
@@ -555,7 +521,7 @@ namespace EXCEL2.Controllers
 			var endCell_hoja3 = hoja3.Cells["U" + (filaActual_hoja3)];
 			var range_hoja3 = hoja3.Cells[startCell.Address + ":" + endCell.Address];
 			bool insertarFila_hoja3 = false;
-			foreach (var cell in range_hoja2)
+			foreach (var cell in range_hoja3)
 			{
 				// Verifica si la celda tiene contenido
 				if (cell.Text != "")
