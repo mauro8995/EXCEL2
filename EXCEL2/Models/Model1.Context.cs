@@ -39,6 +39,10 @@ namespace EXCEL2.Models
         public virtual DbSet<Panel_1009_4916> Panel_1009_4916 { get; set; }
         public virtual DbSet<AP_Dyn_Familias_30> AP_Dyn_Familias_30 { get; set; }
         public virtual DbSet<Panel_1008_7074> Panel_1008_7074 { get; set; }
+        public virtual DbSet<Panel_1008_4170> Panel_1008_4170 { get; set; }
+        public virtual DbSet<Panel_1008_4450> Panel_1008_4450 { get; set; }
+        public virtual DbSet<Panel_1008_4233> Panel_1008_4233 { get; set; }
+        public virtual DbSet<Panel_1008_4261> Panel_1008_4261 { get; set; }
     
         public virtual ObjectResult<PROCEDURE_GENERATE_EXCEL_Result> PROCEDURE_GENERATE_EXCEL()
         {

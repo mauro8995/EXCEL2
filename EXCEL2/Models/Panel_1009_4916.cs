@@ -64,5 +64,7 @@ namespace EXCEL2.Models
         public Nullable<System.DateTime> C3_F_ENVIADO_DECLARAR { get; set; }
         public string C3_TL_SERIE { get; set; }
         public string C3_TL_CORRELATIVO { get; set; }
+        public string C3_TL_URL { get; set; }
+        public string C3_TL_MENSAJE { get; set; }
     }
 }

@@ -159,5 +159,15 @@ namespace EXCEL2.Models
         public Nullable<decimal> C3_PR3_DIF6 { get; set; }
         public Nullable<decimal> C3_PR3_DIF5 { get; set; }
         public Nullable<decimal> C3_PR3_DIF4 { get; set; }
+        public string C3_PR3_OBSERVACION6 { get; set; }
+        public Nullable<System.DateTime> C8_PR3_TRANSITOS_VISA_COVIPERU_3_FE_FECHA_VISA_fecha_min { get; set; }
+        public Nullable<int> C3_PR3_REGULARIZAR_AÑO_DET { get; set; }
+        public Nullable<int> C3_PR3_REGULARIZAR_MES_DET { get; set; }
+        public Nullable<decimal> C3_PR3_REGULARIZAR_MONTO_DET { get; set; }
+        public Nullable<int> C3_NE_CONTADOR { get; set; }
+        public Nullable<decimal> C8_PR3_TRANSITOS_VISA_COVISOL_3_ND_IMPORTE_VISA_COVISOL_Suma { get; set; }
+        public Nullable<int> C3_PR3_CANT_OBS_CP { get; set; }
+        public Nullable<int> C3_PR3_CANT_OBS_RESUMEN { get; set; }
+        public Nullable<System.DateTime> C8_PR3_TRANSITOS_VISA_COVISOL_3_FE_FECHA_VISA_COVISOL_Fecha_min { get; set; }
     }
 }

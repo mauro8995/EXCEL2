@@ -176,5 +176,9 @@ namespace EXCEL2.Models
         public Nullable<decimal> C3_PR3_COM_POR_TRANSFERIR_VISA { get; set; }
         public Nullable<int> C3_PR3_COM_POR_TRANSFERIR_SN_VISA { get; set; }
         public Nullable<decimal> C8_PR3_TRANSITOS_VISA_COVIPERU_3_ND_IMPORTE_VISA_Suma { get; set; }
+        public Nullable<int> C3_PR3_COM_CONTADOR_COVISOL { get; set; }
+        public Nullable<decimal> C3_PR3_REGULARIZAR_MONTO_DET { get; set; }
+        public Nullable<int> C3_PR3_REGULARIZAR_MES_DET { get; set; }
+        public Nullable<int> C3_PR3_REGULARIZAR_AÑO_DET { get; set; }
     }
 }

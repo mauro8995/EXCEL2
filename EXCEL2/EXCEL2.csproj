@@ -217,6 +217,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoviPeruController.cs" />
     <Compile Include="Controllers\CovisurController.cs" />
+    <Compile Include="Controllers\EasywayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LiquidacionController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -262,6 +263,18 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Panel_1008.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_1008_4170.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_1008_4233.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_1008_4261.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_1008_4450.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Panel_1008_4700.cs">
@@ -385,6 +398,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\CoviPeru\" />
     <Folder Include="Views\Covisur\" />
+    <Folder Include="Views\Easyway\" />
     <Folder Include="Views\Liquidacion\" />
     <Folder Include="Views\Terrapuerto\" />
   </ItemGroup>
