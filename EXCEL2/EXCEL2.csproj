@@ -216,11 +216,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoviPeruController.cs" />
+    <Compile Include="Controllers\CoviSolController.cs" />
     <Compile Include="Controllers\CovisurController.cs" />
     <Compile Include="Controllers\EasywayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LiquidacionController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OpeCoviController.cs" />
     <Compile Include="Controllers\Panel_5_2664Controller.cs" />
     <Compile Include="Controllers\TerrapuertoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -236,6 +238,9 @@
     <Compile Include="Models\AP_Dyn_Familias_30.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AP_Dyn_Familias_31.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AP__DocIntegratedDataStorage.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -246,6 +251,7 @@
     <Compile Include="Models\Listas\ExcelMes.cs" />
     <Compile Include="Models\Listas\Factura.cs" />
     <Compile Include="Models\Listas\RegistroDatos.cs" />
+    <Compile Include="Models\Listas\TipoComprobantes.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -287,6 +293,15 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Panel_1009_4916.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2011.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2011_8800.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2011_8882.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Panel_5.cs">
@@ -397,9 +412,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CoviPeru\" />
+    <Folder Include="Views\CoviSol\" />
     <Folder Include="Views\Covisur\" />
     <Folder Include="Views\Easyway\" />
     <Folder Include="Views\Liquidacion\" />
+    <Folder Include="Views\OpeCovi\" />
     <Folder Include="Views\Terrapuerto\" />
   </ItemGroup>
   <ItemGroup>

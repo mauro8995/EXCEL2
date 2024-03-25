@@ -1,10 +1,13 @@
-﻿using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
+﻿using DocumentFormat.OpenXml.CustomXmlSchemaReferences;
+using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
+using DocumentFormat.OpenXml.Spreadsheet;
 using EXCEL2.Models;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -39,7 +42,7 @@ namespace EXCEL2.Controllers
 					// Obtener el contenido del paquete en un array de bytes
 					byte[] excelBytes = ExcelLiquidacionSemanal(package, idPanel).GetAsByteArray();
 
-					//return Json(UpdateDatosExcelLiquidacionSemanal(excelBytes,idPanel));
+					return Json(UpdateDatosExcelLiquidacionSemanal(excelBytes,idPanel));
 
 
 					// Devolver el archivo Excel al cliente como descarga
@@ -125,6 +128,27 @@ namespace EXCEL2.Controllers
 			border2.Style.Border.Right.Style = ExcelBorderStyle.Thin;
 			border2.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 
+			string hexColorAzul = "#0000ff";
+			ExcelRange azul = hoja1.Cells["H" + finalInicial];
+			System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml(hexColorAzul);
+			azul.Style.Fill.PatternType = ExcelFillStyle.Solid;
+			azul.Style.Fill.BackgroundColor.SetColor(color);
+
+			string hexColorVerde = "#324c2a";
+			ExcelRange Verde = hoja1.Cells["I" + finalInicial];
+			System.Drawing.Color colorVerde = System.Drawing.ColorTranslator.FromHtml(hexColorVerde);
+			Verde.Style.Fill.PatternType = ExcelFillStyle.Solid;
+			Verde.Style.Fill.BackgroundColor.SetColor(colorVerde);
+
+			string hexColorCrema = "#fffdd0";
+			System.Drawing.Color colorCrema = System.Drawing.ColorTranslator.FromHtml(hexColorCrema);
+
+			// Convertir el valor hexadecimal a Color
+			string hexColorBlanco = "#FFFFFF"; // Ejemplo de color rojo
+			System.Drawing.Color colorBlanco = System.Drawing.ColorTranslator.FromHtml(hexColorBlanco);
+
+			border2.Style.Font.Color.SetColor(colorBlanco);
+
 			finalInicial = finalInicial + 2;
 
 			var descuentoTransitos = db.Panel_1008_4170.Where(x => x.C_ElementID == idPanel).ToList();
@@ -136,8 +160,13 @@ namespace EXCEL2.Controllers
 			foreach (var item in descuentoTransitos)
             {
 				hoja1.Cells["G" + (contadorDescuentosTransito)].Value = item.C3_T_Descripcion;
-				hoja1.Cells["H" + (contadorDescuentosTransito)].Value = item.C3_T_MONTO;
+				hoja1.Cells["H" + (contadorDescuentosTransito)].Value = -item.C3_T_MONTO;
 				hoja1.Cells["H" + (contadorDescuentosTransito)].Style.Numberformat.Format = "\"S/\"#,##0.00";
+				ExcelRange Bordeaa = hoja1.Cells["H" + contadorDescuentosTransito];
+				Bordeaa.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+				Bordeaa.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+				Bordeaa.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+				Bordeaa.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 				contadorDescuentosTransito++;
 			}
 
@@ -149,6 +178,14 @@ namespace EXCEL2.Controllers
 				hoja1.Cells["G" + (contadorAbonoTransito)].Value = "Abono "+ item.C3_T_FECHA.Value.ToString("dd/MM");
 				hoja1.Cells["H" + (contadorAbonoTransito)].Value = item.C3_T_MONTO_BONO_T;
 				hoja1.Cells["H" + (contadorAbonoTransito)].Style.Numberformat.Format = "\"S/\"#,##0.00";
+				ExcelRange Crema = hoja1.Cells["H" + contadorAbonoTransito];
+				Crema.Style.Fill.PatternType = ExcelFillStyle.Solid;
+				Crema.Style.Fill.BackgroundColor.SetColor(colorCrema);
+				// Agregar bordes al rango de celdas
+				Crema.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+				Crema.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+				Crema.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+				Crema.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 				contadorAbonoTransito++;
 				contador++;
 			}
@@ -163,6 +200,11 @@ namespace EXCEL2.Controllers
 				hoja1.Cells["I" + (contadorDescuentosDetraccion)].Value = item.C3_T_MONTO_DET;
 				hoja1.Cells["I" + (contadorDescuentosDetraccion)].Style.Numberformat.Format = "\"S/\"#,##0.00";
 				hoja1.Cells["J" + (contadorDescuentosDetraccion)].Value = item.C3_T_DESCRIPCIÓN_DET;
+				ExcelRange Bordeaa = hoja1.Cells["I" + contadorDescuentosDetraccion];
+				Bordeaa.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+				Bordeaa.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+				Bordeaa.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+				Bordeaa.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 				contadorDescuentosDetraccion++;
 			}
 
@@ -179,9 +221,17 @@ namespace EXCEL2.Controllers
 
             foreach (var item in AbonoDetraccion)
             {
-				hoja1.Cells["I" + (contadorFinal)].Value = item.C3_PR3_MONTO;
+				hoja1.Cells["I" + (contadorFinal)].Value = -item.C3_PR3_MONTO;
 				hoja1.Cells["I" + (contadorFinal)].Style.Numberformat.Format = "\"S/\"#,##0.00";
 				hoja1.Cells["J" + (contadorFinal)].Value = "Abono " + item.C3_PR3_FECHA_DET.Value.ToString("dd/MM");
+				ExcelRange Crema = hoja1.Cells["I" + contadorFinal];
+				Crema.Style.Fill.PatternType = ExcelFillStyle.Solid;
+				Crema.Style.Fill.BackgroundColor.SetColor(colorCrema);
+				// Agregar bordes al rango de celdas
+				Crema.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+				Crema.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+				Crema.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+				Crema.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 				contadorFinal++;
 
 			}

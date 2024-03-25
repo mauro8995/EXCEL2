@@ -156,6 +156,27 @@
           <Property Name="_FamilyRecord-To" Type="datetime" />
           <Property Name="_SecureRoomID" Type="int" />
         </EntityType>
+        <EntityType Name="AP_Dyn_Familias_31">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ElementID" Type="int" />
+          <Property Name="Creado" Type="datetime" />
+          <Property Name="IdCreador" Type="int" />
+          <Property Name="TipoCreador" Type="int" />
+          <Property Name="Modificado" Type="datetime" />
+          <Property Name="IdModificador" Type="int" />
+          <Property Name="TipoModificador" Type="int" />
+          <Property Name="_FamilyClass" Type="int" />
+          <Property Name="_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="_FamilyRecord-Priority" Type="int" />
+          <Property Name="_FamilyRecord-Status" Type="int" />
+          <Property Name="_FamilyRecord-Description" Type="nvarchar(max)" />
+          <Property Name="_FamilyRecord-From" Type="datetime" />
+          <Property Name="_FamilyRecord-To" Type="datetime" />
+          <Property Name="_SecureRoomID" Type="int" />
+        </EntityType>
         <EntityType Name="Panel_1008">
           <Key>
             <PropertyRef Name="ID" />
@@ -705,6 +726,104 @@
           <Property Name="3_TL_URL" Type="nvarchar" MaxLength="255" />
           <Property Name="3_TL_MENSAJE" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="Panel_2011">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ElementID" Type="int" />
+          <Property Name="Creado" Type="datetime" />
+          <Property Name="IdCreador" Type="int" />
+          <Property Name="TipoCreador" Type="int" />
+          <Property Name="Modificado" Type="datetime" />
+          <Property Name="IdModificador" Type="int" />
+          <Property Name="TipoModificador" Type="int" />
+          <Property Name="_List of Process References" Type="nvarchar" MaxLength="255" />
+          <Property Name="_List of Process Themes" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_TAG_FECHA_INICIO" Type="datetime" />
+          <Property Name="3_PR3_TAG_REFERENCIA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_TAG_MES" Type="int" />
+          <Property Name="3_PR3_TAG_MES_TEXTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_TAG_AÑO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FC_IDPANEL" Type="int" />
+          <Property Name="3_PR3_T_SERIE_CHILCA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_T_SERIE_LIMA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_T_SERIE_TRUJILLO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_WS_WINDOWS_CORRELATIVO" Type="int" />
+          <Property Name="8_PR3_FC_ARCHIVOS_FACTURACION/3_PR3_ARCHIVO/Cantidad_sin_fac" Type="int" />
+          <Property Name="8_PR3_FC_ARCHIVOS_FACTURACION/3_PR3_FLAG/Cantidad_facturado" Type="int" />
+          <Property Name="3_PR3_TAG_ASUNTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="2_PR3_FC_PRE_CORRE_LIMA/F_TAG_CORREO_PUNTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="2_PR3_FC_PRE_CORRE_CHILCA/F_TAG_CORREO_PUNTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="2_PR3_FC_PRE_CORRE_TRUJILLO/F_TAG_CORREO_PUNTO" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_ASUNTO1" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FC_ESTADO" Type="int" />
+        </EntityType>
+        <EntityType Name="Panel_2011_8800">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ElementID" Type="int" />
+          <Property Name="Creado" Type="datetime" />
+          <Property Name="IdCreador" Type="int" />
+          <Property Name="TipoCreador" Type="int" />
+          <Property Name="Modificado" Type="datetime" />
+          <Property Name="IdModificador" Type="int" />
+          <Property Name="TipoModificador" Type="int" />
+          <Property Name="_ExecutedScript" Type="int" />
+          <Property Name="_Register creation ProcessID" Type="int" />
+          <Property Name="_Origin Register ID" Type="int" />
+          <Property Name="_RegisterStatus" Type="int" />
+          <Property Name="_Register Origin ID" Type="int" />
+          <Property Name="_Register Origin Type" Type="int" />
+          <Property Name="_Numerator" Type="int" />
+          <Property Name="3_PR3_FC_CUENTA" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FC_RUC" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FC_RAZON_SOCIAL" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3·_FC_DIRECCION" Type="nvarchar(max)" />
+          <Property Name="3_PR3_FC_CORREO" Type="nvarchar(max)" />
+          <Property Name="3_PR3_FC_COMENTARIO2" Type="nvarchar(max)" />
+          <Property Name="3_PR3_FC_PEAJE_COVIPERU" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_FC_PEAJE_COVISOL" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_FC_PEAJE_COVISUR" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_FC_TOTAL" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_FC_FECHA_AFILIACION" Type="datetime" />
+          <Property Name="3_PR3_FC_MODALIDAD" Type="int" />
+          <Property Name="3_PR3_FC_ADM" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_FC_BASE_FAC" Type="numeric" Precision="28" Scale="10" />
+          <Property Name="3_PR3_FC_SERIE" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FC_DETRACCION" Type="int" />
+          <Property Name="3_PR3_FC_MES_TXT" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_GC_FC_AÑO_TXT" Type="nvarchar" MaxLength="255" />
+          <Property Name="3_PR3_FC_TIPO_FACT" Type="int" />
+          <Property Name="3_PR3_FC_FECHA_EMISION" Type="datetime" />
+          <Property Name="3_PR3_FC_FECHA_VENCIMIENTO" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Panel_2011_8882">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="_ElementID" Type="int" />
+          <Property Name="Creado" Type="datetime" />
+          <Property Name="IdCreador" Type="int" />
+          <Property Name="TipoCreador" Type="int" />
+          <Property Name="Modificado" Type="datetime" />
+          <Property Name="IdModificador" Type="int" />
+          <Property Name="TipoModificador" Type="int" />
+          <Property Name="_ExecutedScript" Type="int" />
+          <Property Name="_Register creation ProcessID" Type="int" />
+          <Property Name="_Origin Register ID" Type="int" />
+          <Property Name="_RegisterStatus" Type="int" />
+          <Property Name="_Register Origin ID" Type="int" />
+          <Property Name="_Register Origin Type" Type="int" />
+          <Property Name="_Numerator" Type="int" />
+          <Property Name="3_PR3_ARCHIVO" Type="nvarchar(max)" />
+          <Property Name="3_PR3_FLAG" Type="int" />
+          <Property Name="3_ESTADO_FAC" Type="int" />
+          <Property Name="3_PR3_ARCHIVO_MR" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Panel_5">
           <Key>
             <PropertyRef Name="ID" />
@@ -787,6 +906,7 @@
           <EntitySet Name="AP_Dyn_Familias_26" EntityType="Self.AP_Dyn_Familias_26" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AP_Dyn_Familias_27" EntityType="Self.AP_Dyn_Familias_27" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AP_Dyn_Familias_30" EntityType="Self.AP_Dyn_Familias_30" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AP_Dyn_Familias_31" EntityType="Self.AP_Dyn_Familias_31" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1008" EntityType="Self.Panel_1008" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1008_4170" EntityType="Self.Panel_1008_4170" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1008_4233" EntityType="Self.Panel_1008_4233" Schema="dbo" store:Type="Tables" />
@@ -796,6 +916,9 @@
           <EntitySet Name="Panel_1008_7074" EntityType="Self.Panel_1008_7074" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1009" EntityType="Self.Panel_1009" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_1009_4916" EntityType="Self.Panel_1009_4916" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Panel_2011" EntityType="Self.Panel_2011" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Panel_2011_8800" EntityType="Self.Panel_2011_8800" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Panel_2011_8882" EntityType="Self.Panel_2011_8882" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_5" EntityType="Self.Panel_5" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Panel_5_2664" EntityType="Self.Panel_5_2664" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -821,6 +944,10 @@
           <EntitySet Name="Panel_1008_4450" EntityType="AuraPortal_BPMSModel.Panel_1008_4450" />
           <EntitySet Name="Panel_1008_4233" EntityType="AuraPortal_BPMSModel.Panel_1008_4233" />
           <EntitySet Name="Panel_1008_4261" EntityType="AuraPortal_BPMSModel.Panel_1008_4261" />
+          <EntitySet Name="AP_Dyn_Familias_31" EntityType="AuraPortal_BPMSModel.AP_Dyn_Familias_31" />
+          <EntitySet Name="Panel_2011" EntityType="AuraPortal_BPMSModel.Panel_2011" />
+          <EntitySet Name="Panel_2011_8800" EntityType="AuraPortal_BPMSModel.Panel_2011_8800" />
+          <EntitySet Name="Panel_2011_8882" EntityType="AuraPortal_BPMSModel.Panel_2011_8882" />
         </EntityContainer>
         <EntityType Name="Panel_5_2664">
           <Key>
@@ -1605,6 +1732,125 @@
           <Property Name="C3_PR3_MONTO" Type="Decimal" Precision="28" Scale="10" />
           <Property Name="C3_PR3_BANCO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="AP_Dyn_Familias_31">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ElementID" Type="Int32" />
+          <Property Name="Creado" Type="DateTime" Precision="3" />
+          <Property Name="IdCreador" Type="Int32" />
+          <Property Name="TipoCreador" Type="Int32" />
+          <Property Name="Modificado" Type="DateTime" Precision="3" />
+          <Property Name="IdModificador" Type="Int32" />
+          <Property Name="TipoModificador" Type="Int32" />
+          <Property Name="C_FamilyClass" Type="Int32" />
+          <Property Name="C_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C_FamilyRecord_Priority" Type="Int32" />
+          <Property Name="C_FamilyRecord_Status" Type="Int32" />
+          <Property Name="C_FamilyRecord_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_FamilyRecord_From" Type="DateTime" Precision="3" />
+          <Property Name="C_FamilyRecord_To" Type="DateTime" Precision="3" />
+          <Property Name="C_SecureRoomID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Panel_2011">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ElementID" Type="Int32" />
+          <Property Name="Creado" Type="DateTime" Precision="3" />
+          <Property Name="IdCreador" Type="Int32" />
+          <Property Name="TipoCreador" Type="Int32" />
+          <Property Name="Modificado" Type="DateTime" Precision="3" />
+          <Property Name="IdModificador" Type="Int32" />
+          <Property Name="TipoModificador" Type="Int32" />
+          <Property Name="C_List_of_Process_References" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C_List_of_Process_Themes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_TAG_FECHA_INICIO" Type="DateTime" Precision="3" />
+          <Property Name="C3_PR3_TAG_REFERENCIA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_TAG_MES" Type="Int32" />
+          <Property Name="C3_PR3_TAG_MES_TEXTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_TAG_AÑO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_IDPANEL" Type="Int32" />
+          <Property Name="C3_PR3_T_SERIE_CHILCA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_T_SERIE_LIMA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_T_SERIE_TRUJILLO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_WS_WINDOWS_CORRELATIVO" Type="Int32" />
+          <Property Name="C8_PR3_FC_ARCHIVOS_FACTURACION_3_PR3_ARCHIVO_Cantidad_sin_fac" Type="Int32" />
+          <Property Name="C8_PR3_FC_ARCHIVOS_FACTURACION_3_PR3_FLAG_Cantidad_facturado" Type="Int32" />
+          <Property Name="C3_PR3_TAG_ASUNTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C2_PR3_FC_PRE_CORRE_LIMA_F_TAG_CORREO_PUNTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C2_PR3_FC_PRE_CORRE_CHILCA_F_TAG_CORREO_PUNTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C2_PR3_FC_PRE_CORRE_TRUJILLO_F_TAG_CORREO_PUNTO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_ASUNTO1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_ESTADO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Panel_2011_8800">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ElementID" Type="Int32" />
+          <Property Name="Creado" Type="DateTime" Precision="3" />
+          <Property Name="IdCreador" Type="Int32" />
+          <Property Name="TipoCreador" Type="Int32" />
+          <Property Name="Modificado" Type="DateTime" Precision="3" />
+          <Property Name="IdModificador" Type="Int32" />
+          <Property Name="TipoModificador" Type="Int32" />
+          <Property Name="C_ExecutedScript" Type="Int32" />
+          <Property Name="C_Register_creation_ProcessID" Type="Int32" />
+          <Property Name="C_Origin_Register_ID" Type="Int32" />
+          <Property Name="C_RegisterStatus" Type="Int32" />
+          <Property Name="C_Register_Origin_ID" Type="Int32" />
+          <Property Name="C_Register_Origin_Type" Type="Int32" />
+          <Property Name="C_Numerator" Type="Int32" />
+          <Property Name="C3_PR3_FC_CUENTA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_RUC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_RAZON_SOCIAL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3__FC_DIRECCION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_CORREO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_COMENTARIO2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_PEAJE_COVIPERU" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_FC_PEAJE_COVISOL" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_FC_PEAJE_COVISUR" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_FC_TOTAL" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_FC_FECHA_AFILIACION" Type="DateTime" Precision="3" />
+          <Property Name="C3_PR3_FC_MODALIDAD" Type="Int32" />
+          <Property Name="C3_PR3_FC_ADM" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_FC_BASE_FAC" Type="Decimal" Precision="28" Scale="10" />
+          <Property Name="C3_PR3_FC_SERIE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_DETRACCION" Type="Int32" />
+          <Property Name="C3_PR3_FC_MES_TXT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_GC_FC_AÑO_TXT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FC_TIPO_FACT" Type="Int32" />
+          <Property Name="C3_PR3_FC_FECHA_EMISION" Type="DateTime" Precision="3" />
+          <Property Name="C3_PR3_FC_FECHA_VENCIMIENTO" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Panel_2011_8882">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_ElementID" Type="Int32" />
+          <Property Name="Creado" Type="DateTime" Precision="3" />
+          <Property Name="IdCreador" Type="Int32" />
+          <Property Name="TipoCreador" Type="Int32" />
+          <Property Name="Modificado" Type="DateTime" Precision="3" />
+          <Property Name="IdModificador" Type="Int32" />
+          <Property Name="TipoModificador" Type="Int32" />
+          <Property Name="C_ExecutedScript" Type="Int32" />
+          <Property Name="C_Register_creation_ProcessID" Type="Int32" />
+          <Property Name="C_Origin_Register_ID" Type="Int32" />
+          <Property Name="C_RegisterStatus" Type="Int32" />
+          <Property Name="C_Register_Origin_ID" Type="Int32" />
+          <Property Name="C_Register_Origin_Type" Type="Int32" />
+          <Property Name="C_Numerator" Type="Int32" />
+          <Property Name="C3_PR3_ARCHIVO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C3_PR3_FLAG" Type="Int32" />
+          <Property Name="C3_ESTADO_FAC" Type="Int32" />
+          <Property Name="C3_PR3_ARCHIVO_MR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2385,6 +2631,129 @@
                 <ScalarProperty Name="C3_PR3_BANCO" ColumnName="3_PR3_BANCO" />
                 <ScalarProperty Name="C3_PR3_MONTO" ColumnName="3_PR3_MONTO" />
                 <ScalarProperty Name="C3_PR3_FECHA_DET" ColumnName="3_PR3_FECHA_DET" />
+                <ScalarProperty Name="C_Numerator" ColumnName="_Numerator" />
+                <ScalarProperty Name="C_Register_Origin_Type" ColumnName="_Register Origin Type" />
+                <ScalarProperty Name="C_Register_Origin_ID" ColumnName="_Register Origin ID" />
+                <ScalarProperty Name="C_RegisterStatus" ColumnName="_RegisterStatus" />
+                <ScalarProperty Name="C_Origin_Register_ID" ColumnName="_Origin Register ID" />
+                <ScalarProperty Name="C_Register_creation_ProcessID" ColumnName="_Register creation ProcessID" />
+                <ScalarProperty Name="C_ExecutedScript" ColumnName="_ExecutedScript" />
+                <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
+                <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
+                <ScalarProperty Name="Modificado" ColumnName="Modificado" />
+                <ScalarProperty Name="TipoCreador" ColumnName="TipoCreador" />
+                <ScalarProperty Name="IdCreador" ColumnName="IdCreador" />
+                <ScalarProperty Name="Creado" ColumnName="Creado" />
+                <ScalarProperty Name="C_ElementID" ColumnName="_ElementID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AP_Dyn_Familias_31">
+            <EntityTypeMapping TypeName="AuraPortal_BPMSModel.AP_Dyn_Familias_31">
+              <MappingFragment StoreEntitySet="AP_Dyn_Familias_31">
+                <ScalarProperty Name="C_SecureRoomID" ColumnName="_SecureRoomID" />
+                <ScalarProperty Name="C_FamilyRecord_To" ColumnName="_FamilyRecord-To" />
+                <ScalarProperty Name="C_FamilyRecord_From" ColumnName="_FamilyRecord-From" />
+                <ScalarProperty Name="C_FamilyRecord_Description" ColumnName="_FamilyRecord-Description" />
+                <ScalarProperty Name="C_FamilyRecord_Status" ColumnName="_FamilyRecord-Status" />
+                <ScalarProperty Name="C_FamilyRecord_Priority" ColumnName="_FamilyRecord-Priority" />
+                <ScalarProperty Name="C_Name" ColumnName="_Name" />
+                <ScalarProperty Name="C_FamilyClass" ColumnName="_FamilyClass" />
+                <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
+                <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
+                <ScalarProperty Name="Modificado" ColumnName="Modificado" />
+                <ScalarProperty Name="TipoCreador" ColumnName="TipoCreador" />
+                <ScalarProperty Name="IdCreador" ColumnName="IdCreador" />
+                <ScalarProperty Name="Creado" ColumnName="Creado" />
+                <ScalarProperty Name="C_ElementID" ColumnName="_ElementID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Panel_2011">
+            <EntityTypeMapping TypeName="AuraPortal_BPMSModel.Panel_2011">
+              <MappingFragment StoreEntitySet="Panel_2011">
+                <ScalarProperty Name="C3_PR3_FC_ESTADO" ColumnName="3_PR3_FC_ESTADO" />
+                <ScalarProperty Name="C3_PR3_ASUNTO1" ColumnName="3_PR3_ASUNTO1" />
+                <ScalarProperty Name="C2_PR3_FC_PRE_CORRE_TRUJILLO_F_TAG_CORREO_PUNTO" ColumnName="2_PR3_FC_PRE_CORRE_TRUJILLO/F_TAG_CORREO_PUNTO" />
+                <ScalarProperty Name="C2_PR3_FC_PRE_CORRE_CHILCA_F_TAG_CORREO_PUNTO" ColumnName="2_PR3_FC_PRE_CORRE_CHILCA/F_TAG_CORREO_PUNTO" />
+                <ScalarProperty Name="C2_PR3_FC_PRE_CORRE_LIMA_F_TAG_CORREO_PUNTO" ColumnName="2_PR3_FC_PRE_CORRE_LIMA/F_TAG_CORREO_PUNTO" />
+                <ScalarProperty Name="C3_PR3_TAG_ASUNTO" ColumnName="3_PR3_TAG_ASUNTO" />
+                <ScalarProperty Name="C8_PR3_FC_ARCHIVOS_FACTURACION_3_PR3_FLAG_Cantidad_facturado" ColumnName="8_PR3_FC_ARCHIVOS_FACTURACION/3_PR3_FLAG/Cantidad_facturado" />
+                <ScalarProperty Name="C8_PR3_FC_ARCHIVOS_FACTURACION_3_PR3_ARCHIVO_Cantidad_sin_fac" ColumnName="8_PR3_FC_ARCHIVOS_FACTURACION/3_PR3_ARCHIVO/Cantidad_sin_fac" />
+                <ScalarProperty Name="C3_PR3_WS_WINDOWS_CORRELATIVO" ColumnName="3_PR3_WS_WINDOWS_CORRELATIVO" />
+                <ScalarProperty Name="C3_PR3_T_SERIE_TRUJILLO" ColumnName="3_PR3_T_SERIE_TRUJILLO" />
+                <ScalarProperty Name="C3_PR3_T_SERIE_LIMA" ColumnName="3_PR3_T_SERIE_LIMA" />
+                <ScalarProperty Name="C3_PR3_T_SERIE_CHILCA" ColumnName="3_PR3_T_SERIE_CHILCA" />
+                <ScalarProperty Name="C3_PR3_FC_IDPANEL" ColumnName="3_PR3_FC_IDPANEL" />
+                <ScalarProperty Name="C3_PR3_TAG_AÑO" ColumnName="3_PR3_TAG_AÑO" />
+                <ScalarProperty Name="C3_PR3_TAG_MES_TEXTO" ColumnName="3_PR3_TAG_MES_TEXTO" />
+                <ScalarProperty Name="C3_PR3_TAG_MES" ColumnName="3_PR3_TAG_MES" />
+                <ScalarProperty Name="C3_PR3_TAG_REFERENCIA" ColumnName="3_PR3_TAG_REFERENCIA" />
+                <ScalarProperty Name="C3_PR3_TAG_FECHA_INICIO" ColumnName="3_PR3_TAG_FECHA_INICIO" />
+                <ScalarProperty Name="C_List_of_Process_Themes" ColumnName="_List of Process Themes" />
+                <ScalarProperty Name="C_List_of_Process_References" ColumnName="_List of Process References" />
+                <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
+                <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
+                <ScalarProperty Name="Modificado" ColumnName="Modificado" />
+                <ScalarProperty Name="TipoCreador" ColumnName="TipoCreador" />
+                <ScalarProperty Name="IdCreador" ColumnName="IdCreador" />
+                <ScalarProperty Name="Creado" ColumnName="Creado" />
+                <ScalarProperty Name="C_ElementID" ColumnName="_ElementID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Panel_2011_8800">
+            <EntityTypeMapping TypeName="AuraPortal_BPMSModel.Panel_2011_8800">
+              <MappingFragment StoreEntitySet="Panel_2011_8800">
+                <ScalarProperty Name="C3_PR3_FC_FECHA_VENCIMIENTO" ColumnName="3_PR3_FC_FECHA_VENCIMIENTO" />
+                <ScalarProperty Name="C3_PR3_FC_FECHA_EMISION" ColumnName="3_PR3_FC_FECHA_EMISION" />
+                <ScalarProperty Name="C3_PR3_FC_TIPO_FACT" ColumnName="3_PR3_FC_TIPO_FACT" />
+                <ScalarProperty Name="C3_GC_FC_AÑO_TXT" ColumnName="3_GC_FC_AÑO_TXT" />
+                <ScalarProperty Name="C3_PR3_FC_MES_TXT" ColumnName="3_PR3_FC_MES_TXT" />
+                <ScalarProperty Name="C3_PR3_FC_DETRACCION" ColumnName="3_PR3_FC_DETRACCION" />
+                <ScalarProperty Name="C3_PR3_FC_SERIE" ColumnName="3_PR3_FC_SERIE" />
+                <ScalarProperty Name="C3_PR3_FC_BASE_FAC" ColumnName="3_PR3_FC_BASE_FAC" />
+                <ScalarProperty Name="C3_PR3_FC_ADM" ColumnName="3_PR3_FC_ADM" />
+                <ScalarProperty Name="C3_PR3_FC_MODALIDAD" ColumnName="3_PR3_FC_MODALIDAD" />
+                <ScalarProperty Name="C3_PR3_FC_FECHA_AFILIACION" ColumnName="3_PR3_FC_FECHA_AFILIACION" />
+                <ScalarProperty Name="C3_PR3_FC_TOTAL" ColumnName="3_PR3_FC_TOTAL" />
+                <ScalarProperty Name="C3_PR3_FC_PEAJE_COVISUR" ColumnName="3_PR3_FC_PEAJE_COVISUR" />
+                <ScalarProperty Name="C3_PR3_FC_PEAJE_COVISOL" ColumnName="3_PR3_FC_PEAJE_COVISOL" />
+                <ScalarProperty Name="C3_PR3_FC_PEAJE_COVIPERU" ColumnName="3_PR3_FC_PEAJE_COVIPERU" />
+                <ScalarProperty Name="C3_PR3_FC_COMENTARIO2" ColumnName="3_PR3_FC_COMENTARIO2" />
+                <ScalarProperty Name="C3_PR3_FC_CORREO" ColumnName="3_PR3_FC_CORREO" />
+                <ScalarProperty Name="C3_PR3__FC_DIRECCION" ColumnName="3_PR3·_FC_DIRECCION" />
+                <ScalarProperty Name="C3_PR3_FC_RAZON_SOCIAL" ColumnName="3_PR3_FC_RAZON_SOCIAL" />
+                <ScalarProperty Name="C3_PR3_FC_RUC" ColumnName="3_PR3_FC_RUC" />
+                <ScalarProperty Name="C3_PR3_FC_CUENTA" ColumnName="3_PR3_FC_CUENTA" />
+                <ScalarProperty Name="C_Numerator" ColumnName="_Numerator" />
+                <ScalarProperty Name="C_Register_Origin_Type" ColumnName="_Register Origin Type" />
+                <ScalarProperty Name="C_Register_Origin_ID" ColumnName="_Register Origin ID" />
+                <ScalarProperty Name="C_RegisterStatus" ColumnName="_RegisterStatus" />
+                <ScalarProperty Name="C_Origin_Register_ID" ColumnName="_Origin Register ID" />
+                <ScalarProperty Name="C_Register_creation_ProcessID" ColumnName="_Register creation ProcessID" />
+                <ScalarProperty Name="C_ExecutedScript" ColumnName="_ExecutedScript" />
+                <ScalarProperty Name="TipoModificador" ColumnName="TipoModificador" />
+                <ScalarProperty Name="IdModificador" ColumnName="IdModificador" />
+                <ScalarProperty Name="Modificado" ColumnName="Modificado" />
+                <ScalarProperty Name="TipoCreador" ColumnName="TipoCreador" />
+                <ScalarProperty Name="IdCreador" ColumnName="IdCreador" />
+                <ScalarProperty Name="Creado" ColumnName="Creado" />
+                <ScalarProperty Name="C_ElementID" ColumnName="_ElementID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Panel_2011_8882">
+            <EntityTypeMapping TypeName="AuraPortal_BPMSModel.Panel_2011_8882">
+              <MappingFragment StoreEntitySet="Panel_2011_8882">
+                <ScalarProperty Name="C3_PR3_ARCHIVO_MR" ColumnName="3_PR3_ARCHIVO_MR" />
+                <ScalarProperty Name="C3_ESTADO_FAC" ColumnName="3_ESTADO_FAC" />
+                <ScalarProperty Name="C3_PR3_FLAG" ColumnName="3_PR3_FLAG" />
+                <ScalarProperty Name="C3_PR3_ARCHIVO" ColumnName="3_PR3_ARCHIVO" />
                 <ScalarProperty Name="C_Numerator" ColumnName="_Numerator" />
                 <ScalarProperty Name="C_Register_Origin_Type" ColumnName="_Register Origin Type" />
                 <ScalarProperty Name="C_Register_Origin_ID" ColumnName="_Register Origin ID" />
