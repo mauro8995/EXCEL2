@@ -86,9 +86,7 @@ namespace EXCEL2.Controllers
 
 			int finalInicial = 2;
 
-			var ordenado = data.OrderBy(item => item.C3_FE_FECHA_COMPROBANTE_RT)
-						   .ThenBy(item => item.C3_TL_CUENTA_RT)
-						   .ThenBy(item => item.C3_TL_NOMBRE_CLIENTE_RT);
+			var ordenado = data.OrderBy(item => item.C3_TL_NOMBRE_CLIENTE_RT);
 
 			foreach (var item in ordenado)
             {
@@ -160,7 +158,7 @@ namespace EXCEL2.Controllers
 			foreach (var item in descuentoTransitos)
             {
 				hoja1.Cells["G" + (contadorDescuentosTransito)].Value = item.C3_T_Descripcion;
-				hoja1.Cells["H" + (contadorDescuentosTransito)].Value = -item.C3_T_MONTO;
+				hoja1.Cells["H" + (contadorDescuentosTransito)].Value = item.C3_T_MONTO;
 				hoja1.Cells["H" + (contadorDescuentosTransito)].Style.Numberformat.Format = "\"S/\"#,##0.00";
 				ExcelRange Bordeaa = hoja1.Cells["H" + contadorDescuentosTransito];
 				Bordeaa.Style.Border.Top.Style = ExcelBorderStyle.Thin;
@@ -176,7 +174,7 @@ namespace EXCEL2.Controllers
 			{
 				hoja1.Cells["F" + (contadorAbonoTransito)].Value = contador + "°";
 				hoja1.Cells["G" + (contadorAbonoTransito)].Value = "Abono "+ item.C3_T_FECHA.Value.ToString("dd/MM");
-				hoja1.Cells["H" + (contadorAbonoTransito)].Value = item.C3_T_MONTO_BONO_T;
+				hoja1.Cells["H" + (contadorAbonoTransito)].Value = -item.C3_T_MONTO_BONO_T;
 				hoja1.Cells["H" + (contadorAbonoTransito)].Style.Numberformat.Format = "\"S/\"#,##0.00";
 				ExcelRange Crema = hoja1.Cells["H" + contadorAbonoTransito];
 				Crema.Style.Fill.PatternType = ExcelFillStyle.Solid;

@@ -415,7 +415,7 @@ namespace EXCEL2.Controllers
 				hoja1.Cells["B" + filaActual].Value = row.C3_TL_NRO_COMPROBANTE_CP;
 				hoja1.Cells["C" + filaActual].Value = row.C3_TL_RUC_CLIENTE_CP;
 				hoja1.Cells["D" + filaActual].Value = row.C3_TL_NOMBRE_CLIENTE_CP;
-				hoja1.Cells["E" + filaActual].Value = row.C3_FE_FECHA_EMISION_CP;
+				hoja1.Cells["E" + filaActual].Value = row.C3_FE_FECHA_EMISION_CP.Value.ToString("dd/MM/yyyy");
 				hoja1.Cells["F" + filaActual].Value = row.C3_TL_MONEDA_CP;
 				hoja1.Cells["G" + filaActual].Value = row.C3_TL_IGV_CP;
 				hoja1.Cells["H" + filaActual].Value = row.C3_TL_OTROS_IMPUESTOS;
@@ -489,7 +489,7 @@ namespace EXCEL2.Controllers
 			foreach (var item in meses)
 			{
 
-				if (item.MesNombre == lista.C3_PR3_COM_MES_TEXTO)
+				if (item.MesNombre == lista.C3_PR3_COM_MES_TEXTO && item.Anio == lista.C3_PR3_EN_AÑO)
 				{
 					hoja2.Cells[item.Posicion + filaActual].Value = lista.C8_GC_COMPROBANTES_TRANSITOS_3_ND_DETRACCION_TOTAL_RT_ND_TOTAL_DETRACCION;
 					hoja2.Cells[item.Posicion + filaActual].Style.Numberformat.Format = "\"S/\"#,##0.00";

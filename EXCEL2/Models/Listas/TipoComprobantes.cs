@@ -11,7 +11,7 @@ namespace EXCEL2.Models.Listas
 		public int modalidad { get; set; }
 
 		public string serie { get; set; }
+        public string Nombre { get; set; }
 
-	
-	}
+    }
 }
