@@ -316,7 +316,7 @@ namespace EXCEL2.Controllers
 				hoja1.Cells["R" + filaActual].Value = 80161501;
 				hoja1.Cells["S" + filaActual].Value = 1;
 				hoja1.Cells["T" + filaActual].Value = "NIU";
-				hoja1.Cells["U" + filaActual].Value = "SERVICIO ADMINISTRACION DE CUENTA";
+				hoja1.Cells["U" + filaActual].Value = "ADMINISTRACION DE CUENTA";
 				hoja1.Cells["W" + filaActual].Formula = "=V"+ filaActual + "*1.18";
 				hoja1.Cells["W" + filaActual].Style.Numberformat.Format = "#,##0.00";
 				hoja1.Cells["X" + filaActual].Value = 10;
