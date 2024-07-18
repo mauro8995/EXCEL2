@@ -180,5 +180,7 @@ namespace EXCEL2.Models
         public Nullable<decimal> C3_PR3_REGULARIZAR_MONTO_DET { get; set; }
         public Nullable<int> C3_PR3_REGULARIZAR_MES_DET { get; set; }
         public Nullable<int> C3_PR3_REGULARIZAR_AÑO_DET { get; set; }
+        public Nullable<int> C3_PR3_INDICADOR6 { get; set; }
+        public Nullable<int> C3_PR3_INDICADOR7 { get; set; }
     }
 }

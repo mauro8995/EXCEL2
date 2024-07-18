@@ -169,5 +169,6 @@ namespace EXCEL2.Models
         public Nullable<int> C3_PR3_CANT_OBS_CP { get; set; }
         public Nullable<int> C3_PR3_CANT_OBS_RESUMEN { get; set; }
         public Nullable<System.DateTime> C8_PR3_TRANSITOS_VISA_COVISOL_3_FE_FECHA_VISA_COVISOL_Fecha_min { get; set; }
+        public Nullable<int> C3_PR3_DECISION { get; set; }
     }
 }

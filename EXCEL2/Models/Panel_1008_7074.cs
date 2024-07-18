@@ -31,5 +31,6 @@ namespace EXCEL2.Models
         public Nullable<int> C_Numerator { get; set; }
         public Nullable<decimal> C3_ND_IMPORTE_VISA { get; set; }
         public Nullable<System.DateTime> C3_FE_FECHA_VISA { get; set; }
+        public string C3_TL_ID_OPERACION { get; set; }
     }
 }

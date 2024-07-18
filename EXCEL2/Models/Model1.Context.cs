@@ -47,6 +47,13 @@ namespace EXCEL2.Models
         public virtual DbSet<Panel_2011> Panel_2011 { get; set; }
         public virtual DbSet<Panel_2011_8800> Panel_2011_8800 { get; set; }
         public virtual DbSet<Panel_2011_8882> Panel_2011_8882 { get; set; }
+        public virtual DbSet<Panel_2013> Panel_2013 { get; set; }
+        public virtual DbSet<Panel_2013_8730> Panel_2013_8730 { get; set; }
+        public virtual DbSet<Panel_2013_8987> Panel_2013_8987 { get; set; }
+        public virtual DbSet<Panel_2013_8925> Panel_2013_8925 { get; set; }
+        public virtual DbSet<Panel_2013_9017> Panel_2013_9017 { get; set; }
+        public virtual DbSet<Panel_2013_8765> Panel_2013_8765 { get; set; }
+        public virtual DbSet<Panel_2013_8954> Panel_2013_8954 { get; set; }
     
         public virtual ObjectResult<PROCEDURE_GENERATE_EXCEL_Result> PROCEDURE_GENERATE_EXCEL()
         {

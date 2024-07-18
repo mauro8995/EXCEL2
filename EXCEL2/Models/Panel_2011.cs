@@ -42,5 +42,7 @@ namespace EXCEL2.Models
         public string C2_PR3_FC_PRE_CORRE_TRUJILLO_F_TAG_CORREO_PUNTO { get; set; }
         public string C3_PR3_ASUNTO1 { get; set; }
         public Nullable<int> C3_PR3_FC_ESTADO { get; set; }
+        public string C3_PR3_ASUNTO_FC { get; set; }
+        public Nullable<int> C8_PR3_CLIENTES_DIF_MENSUAL_3_PR3_CLI_CUENTA_Cantidad { get; set; }
     }
 }

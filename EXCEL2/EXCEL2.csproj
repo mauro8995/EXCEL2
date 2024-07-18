@@ -215,6 +215,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarguerosTerrestresController.cs" />
     <Compile Include="Controllers\CoviPeruController.cs" />
     <Compile Include="Controllers\CoviSolController.cs" />
     <Compile Include="Controllers\CovisurController.cs" />
@@ -302,6 +303,27 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Panel_2011_8882.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2013.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2013_8730.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2013_8765.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2013_8925.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2013_8954.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2013_8987.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Panel_2013_9017.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Panel_5.cs">
@@ -411,6 +433,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CarguerosTerrestres\" />
     <Folder Include="Views\CoviPeru\" />
     <Folder Include="Views\CoviSol\" />
     <Folder Include="Views\Covisur\" />

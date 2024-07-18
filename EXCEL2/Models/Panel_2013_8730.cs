@@ -12,7 +12,7 @@ namespace EXCEL2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Panel_1008_4700
+    public partial class Panel_2013_8730
     {
         public int ID { get; set; }
         public Nullable<int> C_ElementID { get; set; }
@@ -29,25 +29,26 @@ namespace EXCEL2.Models
         public Nullable<int> C_Register_Origin_ID { get; set; }
         public Nullable<int> C_Register_Origin_Type { get; set; }
         public Nullable<int> C_Numerator { get; set; }
-        public Nullable<System.DateTime> C3_FE_FECHA_COMPROBANTE_RT { get; set; }
-        public string C3_TL_CUENTA_RT { get; set; }
-        public string C3_TL_NOMBRE_CLIENTE_RT { get; set; }
-        public string C3_TL_RUC_CLIENTE_RT { get; set; }
-        public string C3_TL_TIPO_COMPROBANTE_RT { get; set; }
-        public string C3_TL_NRO_COMPROBANTE_RT { get; set; }
-        public Nullable<decimal> C3_ND_PEAJE_TOTAL_RT { get; set; }
-        public Nullable<decimal> C3_ND_DETRACCION_TOTAL_RT { get; set; }
-        public string C3_TL_CONCAT_RT { get; set; }
-        public string C3_TL_SERIE_RT { get; set; }
-        public string C3_TL_CORRELATIVO_RT { get; set; }
-        public Nullable<int> C3_TL_CONCESIONARIA { get; set; }
-        public Nullable<System.DateTime> C3_TL_FECHA_TRANSFERENCIA_Y { get; set; }
-        public string C3_TL_NUM_DETRACCION_CARGA_Y { get; set; }
-        public Nullable<decimal> C3_TL_MONTO_DETRACCION_CARGA_Y { get; set; }
-        public Nullable<int> C3_TL_PR3_OBSERVACION_Y { get; set; }
-        public string C3_TL_DETALLE2_Y { get; set; }
-        public Nullable<System.DateTime> C3_TL_FECHA_PAGO_DETRACCION_CAR_Y { get; set; }
-        public string C3_TL_SERIE_RT_PR1 { get; set; }
-        public string C3_TL_CORRELATIVO_RT_PR1 { get; set; }
+        public string C3_PR4_TL_FECHADETRANSITO { get; set; }
+        public string C3_PR4_TL_ESTACION { get; set; }
+        public string C3_PR4_TL_VIA { get; set; }
+        public string C3_PR4_TL_PLACA { get; set; }
+        public string C3_PR4_TL_CATEGORIA { get; set; }
+        public Nullable<decimal> C3_PR4_ND_VALORPEAJE { get; set; }
+        public string C3_PR4_TL_FECOMPROBANTE { get; set; }
+        public string C3_PR4_TL_RUCCONSECION { get; set; }
+        public string C3_PR4_TL_TIPODECOMPROBANTE { get; set; }
+        public string C3_PR4_TL_NUMERODECOMPROBANTE { get; set; }
+        public Nullable<decimal> C3_ND_VALORDEDETRACCION { get; set; }
+        public Nullable<System.DateTime> C3_FE_FECHAYHORATRANSITO_PRE { get; set; }
+        public string C3_TL_NUMERODEDETRAC_PRE { get; set; }
+        public Nullable<System.DateTime> C3_FE_FECHADECOMPROBANTE_PRE { get; set; }
+        public string C3_PR4_TL_CONCESION { get; set; }
+        public Nullable<decimal> C3_ND_SALDOCOVIPERU_PREPAGO { get; set; }
+        public Nullable<decimal> C3_ND_SALDOCOVISUR_PREPAGO { get; set; }
+        public Nullable<decimal> C3_ND_SALDOCOVISOL_PREPAGO { get; set; }
+        public Nullable<decimal> C3_ND_CONSUDETRACCOVISO { get; set; }
+        public Nullable<decimal> C3_ND_CONSUDETRACCOVISUR { get; set; }
+        public Nullable<decimal> C3_ND_CONSUDETRACCOVIPERU { get; set; }
     }
 }

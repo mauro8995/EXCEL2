@@ -50,5 +50,6 @@ namespace EXCEL2.Models
         public Nullable<int> C3_PR3_FC_TIPO_FACT { get; set; }
         public Nullable<System.DateTime> C3_PR3_FC_FECHA_EMISION { get; set; }
         public Nullable<System.DateTime> C3_PR3_FC_FECHA_VENCIMIENTO { get; set; }
+        public Nullable<int> C3_PR3_DETRACCION_SN { get; set; }
     }
 }

@@ -25,6 +25,13 @@
         <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2011" Width="1.5" PointX="20.375" PointY="12.75" />
         <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2011_8800" Width="1.5" PointX="20.375" PointY="20.75" />
         <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2011_8882" Width="1.5" PointX="22.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2013" Width="1.5" PointX="22.375" PointY="6.75" />
+        <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2013_8730" Width="1.5" PointX="22.375" PointY="20.75" />
+        <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2013_8987" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2013_8925" Width="1.5" PointX="24.375" PointY="6.75" />
+        <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2013_9017" Width="1.5" PointX="24.375" PointY="12.75" />
+        <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2013_8765" Width="1.5" PointX="24.375" PointY="18.75" />
+        <EntityTypeShape EntityType="AuraPortal_BPMSModel.Panel_2013_8954" Width="1.5" PointX="10.375" PointY="25.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

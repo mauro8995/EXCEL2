@@ -33,5 +33,6 @@ namespace EXCEL2.Models
         public Nullable<int> C3_PR3_FLAG { get; set; }
         public Nullable<int> C3_ESTADO_FAC { get; set; }
         public string C3_PR3_ARCHIVO_MR { get; set; }
+        public string C3_PR3_TXT_DESCRIPCION_ARC { get; set; }
     }
 }

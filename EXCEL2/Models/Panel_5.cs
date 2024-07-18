@@ -57,5 +57,7 @@ namespace EXCEL2.Models
         public string C3_PR3_LINK_XML { get; set; }
         public string C3_PR3_LINK_PDF { get; set; }
         public Nullable<int> C3_PR3_WS_WINDOWS_CORRELATIVO { get; set; }
+        public Nullable<int> C3_PR3_TAG_ESTADO_COVISOL { get; set; }
+        public Nullable<int> C3_PR3_TAG_ESTADO_COVIPERU_Y { get; set; }
     }
 }
